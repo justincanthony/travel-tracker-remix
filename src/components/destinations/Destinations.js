@@ -22,7 +22,10 @@ const Destinations = () => {
 	}, []);
 
 	return (
-		<section className="destiantionsContainer">{destinationCards}</section>
+		<section className="destiantionsContainer">
+			<h2>Destinations</h2>
+			<div className="destinationsCardWrapper">{destinationCards}</div>
+		</section>
 	);
 };
 
