@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import MicroModal from 'react-micro-modal';
 import './TripCard.css';
 
 const TripCard = ({ destinationObj }) => {
@@ -23,9 +24,15 @@ const TripCard = ({ destinationObj }) => {
 					Trip Cost Per Person: $
 					{estimatedLodgingCostPerDay + estimatedFlightCostPerPerson}
 				</p>
-				<button type="submit" className="bookTripButton">
-					Book Me!
-				</button>
+				<MicroModal
+					trigger={(open) => (
+						<div onClick={open}>
+							<button>Book Me!</button>
+						</div>
+					)}
+				>
+					{(close) => <button onClick={close}>Close!</button>}
+				</MicroModal>
 			</section>
 		</article>
 	);
