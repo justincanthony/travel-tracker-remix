@@ -1,37 +1,41 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import './TripCard.css';
 
 const TripCard = ({ destinationObj }) => {
- const  {id, destination, estimatedLodgingCostPerDay, estimatedFlightCostPerPerson, image} = destinationObj;
+	const {
+		id,
+		destination,
+		estimatedLodgingCostPerDay,
+		estimatedFlightCostPerPerson,
+		image,
+	} = destinationObj;
 
-  return (
-    
-    <article className='tripCard' key={id} id={id}>
-      <header>
-        <h3 className='destination'>{destination}</h3>
-      </header>
-      <section className="destinationDetails">
-        <div className='destinationImageWrapper'>
-          <img className='destinationImage' src={image} alt={destination}/>
-        </div>
-        <p>Lodging Cost Per Day: {estimatedLodgingCostPerDay}</p>
-        <p>Flight Cost Per Person: {estimatedFlightCostPerPerson}</p>
-        {/* <p>Total Trip Cost: {{estimatedLodgingCostPerDay}+{estimatedFlightCostPerPerson}}</p> */}
-        <button type="submit" className="bookTripButton">Book Me!</button>
-      </section>
-    </article>
-  )
-}
+	return (
+		<article className="tripCard" key={id} id={id}>
+			<h3 className="destinationTitle">{destination}</h3>
+			<div className="destinationImageWrapper">
+				<img className="destinationImage" src={image} alt={destination} />
+			</div>
+			<section className="destinationDetails">
+				<p>Lodging Cost Per Day: ${estimatedLodgingCostPerDay}</p>
+				<p>Flight Cost Per Person: ${estimatedFlightCostPerPerson}</p>
+				<p>
+					Trip Cost Per Person: $
+					{estimatedLodgingCostPerDay + estimatedFlightCostPerPerson}
+				</p>
+				<button type="submit" className="bookTripButton">
+					Book Me!
+				</button>
+			</section>
+		</article>
+	);
+};
 
-export default TripCard
-
-
-
+export default TripCard;
 
 // *************IDEAS******************
-//add a book this trip modal onClick that auto populates the form. you can submit it if you like, or cancel. 
+//add a book this trip modal onClick that auto populates the form. you can submit it if you like, or cancel.
 //import toast for error handling
-
 
 // ********Example Trip Data***********
 // {
