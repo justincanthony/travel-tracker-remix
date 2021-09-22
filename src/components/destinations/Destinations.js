@@ -4,33 +4,30 @@ import TripCard from '../trip_cards/TripCard';
 import './Destinations.css';
 
 const Destinations = () => {
-  const [destinations, setDestinations] = useState([])
-  const [error, setError] = useState('')
+	const [destinations, setDestinations] = useState([]);
+	const [error, setError] = useState('');
 
-  const getDestinations = () => {
-    fetchdata()
-    .then(data =>  setDestinations(data.destinations))
-    .catch(error => setError(error.message))
-  }
+	const getDestinations = () => {
+		fetchdata()
+			.then((data) => setDestinations(data.destinations))
+			.catch((error) => setError(error.message));
+	};
 
-  const destinationCards = destinations.map((destinationObj) =>  <TripCard  key ={destinationObj.id} destinationObj={destinationObj} />)
+	const destinationCards = destinations.map((destinationObj) => (
+		<TripCard key={destinationObj.id} destinationObj={destinationObj} />
+	));
 
+	useEffect(() => {
+		getDestinations();
+	}, []);
 
-  useEffect(() => {
-    getDestinations()
-  }, [])
+	return (
+		<section className="destiantionsContainer">{destinationCards}</section>
+	);
+};
 
-
-  return (
-    <div>{destinationCards}</div>
-  )
-}
-
-export default Destinations
-
-
-
+export default Destinations;
 
 // fetch("https://xivapi.com/Action/123", {mode: 'cors'})
-    // .then(response => response.json())
-    // .then(data => console.log(data))
+// .then(response => response.json())
+// .then(data => console.log(data))
