@@ -30,7 +30,3 @@ const Destinations = () => {
 };
 
 export default Destinations;
-
-// fetch("https://xivapi.com/Action/123", {mode: 'cors'})
-// .then(response => response.json())
-// .then(data => console.log(data))
