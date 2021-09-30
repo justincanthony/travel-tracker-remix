@@ -9,7 +9,7 @@ const Navbar = () => {
 			<div className="linksContainer">
 				<ul className="linksList">
 					<li>
-						<Link className="links" to="">
+						<Link className="links" to="/destinations">
 							Destinations
 						</Link>
 					</li>
