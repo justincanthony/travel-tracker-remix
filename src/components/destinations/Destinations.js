@@ -3,12 +3,12 @@ import { fetchdata } from '../../apiCalls';
 import TripCard from '../trip_cards/TripCard';
 import './Destinations.css';
 
-const Destinations = () => {
+const Destinations = (params) => {
 	const [destinations, setDestinations] = useState([]);
 	const [error, setError] = useState('');
 
 	const getDestinations = () => {
-		fetchdata()
+		fetchdata(params.destinations)
 			.then((data) => setDestinations(data.destinations))
 			.catch((error) => setError(error.message));
 	};
