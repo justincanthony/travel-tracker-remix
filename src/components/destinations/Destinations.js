@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { fetchdata } from '../../apiCalls';
-import TripCard from '../trip_cards/TripCard';
+import DestinationCard from '../Destination_Card/DestinationCard';
 import './Destinations.css';
 
 const Destinations = (params) => {
@@ -14,7 +14,7 @@ const Destinations = (params) => {
 	};
 
 	const destinationCards = destinations.map((destinationObj) => (
-		<TripCard key={destinationObj.id} destinationObj={destinationObj} />
+		<DestinationCard key={destinationObj.id} destinationObj={destinationObj} />
 	));
 
 	useEffect(() => {
