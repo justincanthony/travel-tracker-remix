@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchTripsByID } from '../../apiCalls';
-import TripCard from '../trip_cards/TripCard';
+import { filterData } from '../../utils';
+import TripCard from '../Destination_Card/DestinationCard';
 
 export const PendingTrips = ({ pendingTrips }) => {
 	const { id } = pendingTrips;
@@ -8,19 +9,21 @@ export const PendingTrips = ({ pendingTrips }) => {
 	const [tripsPending, setTripsPending] = useState([]);
 	const [error, setError] = useState('');
 
-	const getPendingTrips = () => {
+	const getTrips = () => {
 		fetchTripsByID(id)
-			.then((data) => console.log(data))
+			.then((data) =>
+				setTripsPending(filterData.getPendingTrips(data.requestedTrips))
+			)
 			.catch((error) => setError(error.message));
 	};
 
 	useEffect(() => {
-		getPendingTrips();
+		getTrips();
 	}, []);
 
-	// const tripsPendingCards = tripsPending.map((trip) => (
-	// 	<TripCard key={trip.id} trip={trip} />
-	// ));
+	const tripsPendingCards = tripsPending.map((trip) => (
+		<TripCard key={trip.id} trip={trip} />
+	));
 
 	return (
 		<section>
