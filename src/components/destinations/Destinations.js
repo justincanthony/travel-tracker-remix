@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { fetchdata } from '../../apiCalls';
-import TripCard from '../trip_cards/TripCard';
+import DestinationCard from '../Destination_Card/DestinationCard';
 import './Destinations.css';
 
-const Destinations = () => {
+const Destinations = (params) => {
 	const [destinations, setDestinations] = useState([]);
 	const [error, setError] = useState('');
 
 	const getDestinations = () => {
-		fetchdata()
+		fetchdata(params.destinations)
 			.then((data) => setDestinations(data.destinations))
 			.catch((error) => setError(error.message));
 	};
 
 	const destinationCards = destinations.map((destinationObj) => (
-		<TripCard key={destinationObj.id} destinationObj={destinationObj} />
+		<DestinationCard key={destinationObj.id} destinationObj={destinationObj} />
 	));
 
 	useEffect(() => {

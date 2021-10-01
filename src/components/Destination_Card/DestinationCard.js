@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import MicroModal from 'react-micro-modal';
-import './TripCard.css';
+import './DestinationCard.css';
 
-const TripCard = ({ destinationObj }) => {
+const DestinationCard = ({ destinationObj }) => {
 	const {
 		id,
 		destination,
@@ -38,7 +38,7 @@ const TripCard = ({ destinationObj }) => {
 	);
 };
 
-export default TripCard;
+export default DestinationCard;
 
 // *************IDEAS******************
 //add a book this trip modal onClick that auto populates the form. you can submit it if you like, or cancel.
