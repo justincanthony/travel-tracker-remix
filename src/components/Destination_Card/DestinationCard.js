@@ -12,7 +12,7 @@ const DestinationCard = ({ destinationObj }) => {
 	} = destinationObj;
 
 	return (
-		<article className="tripCard" key={id} id={id}>
+		<article className="destinationCard" key={id} id={id}>
 			<h3 className="destinationTitle">{destination}</h3>
 			<div className="destinationImageWrapper">
 				<img className="destinationImage" src={image} alt={destination} />
@@ -20,10 +20,6 @@ const DestinationCard = ({ destinationObj }) => {
 			<section className="destinationDetails">
 				<p>Lodging Cost Per Day: ${estimatedLodgingCostPerDay}</p>
 				<p>Flight Cost Per Person: ${estimatedFlightCostPerPerson}</p>
-				<p>
-					Trip Cost Per Person: $
-					{estimatedLodgingCostPerDay + estimatedFlightCostPerPerson}
-				</p>
 				<MicroModal
 					trigger={(open) => (
 						<div onClick={open}>
