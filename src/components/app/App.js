@@ -3,6 +3,7 @@ import Navbar from '../navbar/Navbar';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import { PendingTrips } from '../Pending_trips/PendingTrips';
+import { PastTrips } from '../Past_Trips/PastTrips';
 
 const App = () => {
 	return (
@@ -23,6 +24,15 @@ const App = () => {
 					render={({ match }) => {
 						const { params } = match;
 						return <PendingTrips pendingTrips={params} />;
+					}}
+				/>
+				<Route
+					exact
+					path="/:past_trips/user/:id"
+					render={({ match }) => {
+						const { params } = match;
+						console.log(match);
+						return <PastTrips pastTrips={params} />;
 					}}
 				/>
 			</Switch>
