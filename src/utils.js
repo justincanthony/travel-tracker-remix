@@ -1,3 +1,5 @@
+import dayjs from 'dayjs';
+
 export const filterData = {
   getPendingTrips(data) {
     const pendingTrips = data.filter((trip) => trip.status === 'pending');
@@ -23,10 +25,9 @@ export const filterData = {
     if (approvedTrips.length < 1) {
       return 'You have not taken any trips yet. Please visit Destinations to book your next adventure!';
     } else {
-      approvedTrips.filter((trip) => {
-        return dayjs(trip.date).isBefore(dayjs());
-      });
-      return approvedTrips;
+      return approvedTrips.filter(
+        (trip) => dayjs(trip.date).isBefore(dayjs()) === true
+      );
     }
   },
 };
