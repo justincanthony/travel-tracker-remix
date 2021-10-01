@@ -6,7 +6,6 @@ import { TripCard } from '../Trip_Card/TripCard';
 
 export const PendingTrips = ({ pendingTrips }) => {
   const { id } = pendingTrips;
-  console.log(id);
   const [tripsPending, setTripsPending] = useState([]);
   const [error, setError] = useState('');
 
