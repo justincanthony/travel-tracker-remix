@@ -2,7 +2,7 @@ import Destinations from '../destinations/Destinations';
 import Navbar from '../navbar/Navbar';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
-import { PendingTrips } from '../pendting_trips/PendingTrips';
+import { PendingTrips } from '../Pending_trips/PendingTrips';
 
 const App = () => {
 	return (

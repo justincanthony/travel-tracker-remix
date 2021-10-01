@@ -22,7 +22,7 @@ const Destinations = (params) => {
 	}, []);
 
 	return (
-		<section className="destiantionsContainer">
+		<section className="destinationsContainer">
 			<h2>Destinations</h2>
 			<div className="destinationsCardWrapper">{destinationCards}</div>
 		</section>

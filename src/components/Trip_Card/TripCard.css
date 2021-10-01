@@ -1,4 +1,4 @@
-.destinationCard {
+.tripCard {
 	height: 300px;
 	width: 250px;
 	display: flex;
@@ -6,28 +6,9 @@
 	align-items: center;
 	margin: 15px;
 	border-radius: 10px;
-	/* background-color: rgb(194, 233, 246); */
 	background: #fefcfc;
 	box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
 	opacity: 0.75;
-}
-
-.destinationTitle {
-	height: 25px;
-	margin: 0;
-}
-
-.destinationDetails {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	align-items: center;
-	height: 100%;
-	width: 100%;
-}
-
-.destinationDetails p {
-	margin: 5px;
 }
 
 .destinationImageWrapper {
@@ -42,5 +23,6 @@
 	object-fit: cover;
 }
 
-.bookTripButton {
+.tripDetails p {
+	margin: 5px;
 }

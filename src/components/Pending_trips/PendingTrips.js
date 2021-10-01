@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import './PendingTrips.css';
 import { fetchTripsByID } from '../../apiCalls';
 import { filterData } from '../../utils';
-import TripCard from '../Destination_Card/DestinationCard';
+import { TripCard } from '../Trip_Card/TripCard';
 
 export const PendingTrips = ({ pendingTrips }) => {
 	const { id } = pendingTrips;
@@ -26,9 +27,9 @@ export const PendingTrips = ({ pendingTrips }) => {
 	));
 
 	return (
-		<section>
+		<section className="pendingTripsContainer">
 			<h2>Pending Trips</h2>
-			{/* {tripsPendingCards} */}
+			<div className="pendingTripsWrapper">{tripsPendingCards}</div>
 		</section>
 	);
 };
