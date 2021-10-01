@@ -1,4 +1,4 @@
-export const fetchdata = async (path) => {
+export const fetchData = async (path) => {
 	const res = await fetch(`http://localhost:3001/api/v1/${path}`);
 	return res.json();
 };
