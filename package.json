@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "dayjs": "^1.10.7",
     "focus-trap-react": "^8.7.1",
     "micromodal": "^0.4.6",
     "normalize.css": "^8.0.1",
