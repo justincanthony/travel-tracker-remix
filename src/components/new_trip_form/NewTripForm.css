@@ -7,7 +7,7 @@
 .date,
 .travelers,
 .duration {
-	/* border: none; */
+	border-color: rgb(103, 185, 239);
 	border-radius: 8px;
 	margin-bottom: 10px;
 }
@@ -16,8 +16,9 @@
 	border-radius: 8px;
 	border: none;
 	margin-bottom: 10px;
+	height: 25px;
 }
 
 .submit:hover {
-	background-color: cornflowerblue;
+	background-color: rgb(103, 185, 239);
 }
