@@ -42,5 +42,17 @@
 	object-fit: cover;
 }
 
-.bookTripButton {
+.modalContainer {
+	color: grey;
+}
+
+.modalBackButton {
+	border-radius: 8px;
+	border: none;
+	margin-bottom: 10px;
+	height: 25px;
+}
+
+.modalBackButton:hover {
+	background-color: rgb(103, 185, 239);
 }
