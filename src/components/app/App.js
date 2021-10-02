@@ -12,7 +12,7 @@ const App = () => {
       <Switch>
         <Route
           exact
-          path="/destinations"
+          path="/:destinations"
           render={({ match }) => {
             const { params } = match;
             return <Destinations destinations={params.destinations} />;
@@ -31,7 +31,6 @@ const App = () => {
           path="/past_trips/user/:id"
           render={({ match }) => {
             const { params } = match;
-            console.log(match);
             return <PastTrips pastTrips={params} />;
           }}
         />
