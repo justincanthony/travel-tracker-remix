@@ -30,10 +30,17 @@ const DestinationCard = ({ destinationObj }) => {
 				>
 					{(close) => {
 						return (
-							<>
+							<article className="modalFormContainer">
+								<h4>New Trip</h4>
+								<h5>{destination}</h5>
+								<p>
+									Please fill out the following information to book your trip.
+								</p>
 								<NewTripForm destinationID={id} userID={'38'} />
-								<button onClick={close}>Close!</button>
-							</>
+								<button className="goBackModal" onClick={close}>
+									Go Back
+								</button>
+							</article>
 						);
 					}}
 				</MicroModal>
@@ -45,7 +52,7 @@ const DestinationCard = ({ destinationObj }) => {
 export default DestinationCard;
 
 // *************IDEAS******************
-//add a book this trip modal onClick that auto populates the form. you can submit it if you like, or cancel.
+//Add a cancel trip booking optio.
 //import toast for error handling
 
 // ********Example Trip Data***********
