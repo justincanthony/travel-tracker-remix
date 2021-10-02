@@ -30,9 +30,9 @@ const DestinationCard = ({ destinationObj }) => {
 				>
 					{(close) => {
 						return (
-							<article className="modalFormContainer">
-								<h4 className="formTitle">Book Your Trip to {destination}</h4>
-								<p className="formText">
+							<article className="modalContainer">
+								<h3 className="modalTitle">Book Your Trip to {destination}</h3>
+								<p className="modalText">
 									Please fill out the following information.
 								</p>
 								<NewTripForm destinationID={id} userID={'38'} />
