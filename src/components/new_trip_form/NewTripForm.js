@@ -24,26 +24,40 @@ const NewTripForm = ({ userID, destinationID }) => {
 			id: Date.now(),
 			userID,
 			destinationID,
-			duration,
 			travelers,
+			date,
+			duration,
 			status: 'pending',
 			suggestedActivites: [],
 		};
-		scryRenderedComponentsWithType();
+		sendNewTrip(newTrip);
 	};
 
-	return <form className="newTripForm" type="submit"></form>;
+	return (
+		<form className="newTripForm" type="submit">
+			<input
+				type="date"
+				placeholder="Date"
+				value={date}
+				onChange={(e) => setDate(e.target.value)}
+			/>
+			<input
+				type="number"
+				placeholder="Number of Travelers"
+				value={travelers}
+				onChange={(e) => setTravelers(e.target.value)}
+			/>
+			<input
+				type="number"
+				placeholder="Number of Days"
+				value={duration}
+				onChange={(e) => setDuration(e.target.value)}
+			/>
+			<button type="submit" onClick={(e) => handleSubmit(e)}>
+				Book It!
+			</button>
+		</form>
+	);
 };
 
 export default NewTripForm;
-
-// const requiredProperties = [
-//   'id',
-//   'userID',
-//   'destinationID',
-//   'travelers',
-//   'date',
-//   'duration',
-//   'status',
-//   'suggestedActivities',
-// ];
