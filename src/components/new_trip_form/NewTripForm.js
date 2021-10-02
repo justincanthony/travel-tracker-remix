@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { scryRenderedComponentsWithType } from 'react-dom/test-utils';
 import './NewTripForm.css';
 
 const NewTripForm = ({ userID, destinationID }) => {
@@ -40,6 +39,8 @@ const NewTripForm = ({ userID, destinationID }) => {
 				type="date"
 				placeholder="Date"
 				value={date}
+				min={Date.now()}
+				required
 				onChange={(e) => setDate(e.target.value)}
 			/>
 			<input
@@ -47,6 +48,8 @@ const NewTripForm = ({ userID, destinationID }) => {
 				type="number"
 				placeholder="Number of Travelers"
 				value={travelers}
+				min="1"
+				required
 				onChange={(e) => setTravelers(e.target.value)}
 			/>
 			<input
@@ -54,6 +57,7 @@ const NewTripForm = ({ userID, destinationID }) => {
 				type="number"
 				placeholder="Number of Days"
 				value={duration}
+				required
 				onChange={(e) => setDuration(e.target.value)}
 			/>
 			<button className="submit" type="submit" onClick={(e) => handleSubmit(e)}>
@@ -64,3 +68,7 @@ const NewTripForm = ({ userID, destinationID }) => {
 };
 
 export default NewTripForm;
+
+// ********* NOTES *************
+// decide how to handle group size larger than 10
+// add toast alert for succesful submission/POST
