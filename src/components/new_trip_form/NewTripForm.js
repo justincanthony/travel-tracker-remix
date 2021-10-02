@@ -30,6 +30,9 @@ const NewTripForm = ({ userID, destinationID }) => {
 			suggestedActivites: [],
 		};
 		sendNewTrip(newTrip);
+		setDuration('');
+		setTravelers('');
+		setDate('');
 	};
 
 	return (
