@@ -31,13 +31,12 @@ const DestinationCard = ({ destinationObj }) => {
 					{(close) => {
 						return (
 							<article className="modalFormContainer">
-								<h4>New Trip</h4>
-								<h5>{destination}</h5>
-								<p>
-									Please fill out the following information to book your trip.
+								<h4 className="formTitle">Book Your Trip to {destination}</h4>
+								<p className="formText">
+									Please fill out the following information.
 								</p>
 								<NewTripForm destinationID={id} userID={'38'} />
-								<button className="goBackModal" onClick={close}>
+								<button className="modalBackButton" onClick={close}>
 									Go Back
 								</button>
 							</article>
