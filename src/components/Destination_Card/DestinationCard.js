@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import MicroModal from 'react-micro-modal';
+import NewTripForm from '../New_Trip_Form/NewTripForm';
 import './DestinationCard.css';
 
 const DestinationCard = ({ destinationObj }) => {
@@ -27,7 +28,14 @@ const DestinationCard = ({ destinationObj }) => {
 						</div>
 					)}
 				>
-					{(close) => <button onClick={close}>Close!</button>}
+					{(close) => {
+						return (
+							<>
+								<NewTripForm destinationID={id} userID={'38'} />
+								<button onClick={close}>Close!</button>
+							</>
+						);
+					}}
 				</MicroModal>
 			</section>
 		</article>
