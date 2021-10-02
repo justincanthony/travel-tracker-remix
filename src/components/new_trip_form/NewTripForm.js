@@ -36,24 +36,27 @@ const NewTripForm = ({ userID, destinationID }) => {
 	return (
 		<form className="newTripForm" type="submit">
 			<input
+				className="date"
 				type="date"
 				placeholder="Date"
 				value={date}
 				onChange={(e) => setDate(e.target.value)}
 			/>
 			<input
+				className="travelers"
 				type="number"
 				placeholder="Number of Travelers"
 				value={travelers}
 				onChange={(e) => setTravelers(e.target.value)}
 			/>
 			<input
+				className="duration"
 				type="number"
 				placeholder="Number of Days"
 				value={duration}
 				onChange={(e) => setDuration(e.target.value)}
 			/>
-			<button type="submit" onClick={(e) => handleSubmit(e)}>
+			<button className="submit" type="submit" onClick={(e) => handleSubmit(e)}>
 				Book It!
 			</button>
 		</form>
