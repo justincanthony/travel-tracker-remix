@@ -6,7 +6,6 @@
 	align-items: center;
 	margin: 15px;
 	border-radius: 10px;
-	/* background-color: rgb(194, 233, 246); */
 	background: #fefcfc;
 	box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
 	opacity: 0.75;
@@ -26,10 +25,6 @@
 	width: 100%;
 }
 
-.destinationDetails p {
-	margin: 5px;
-}
-
 .destinationImageWrapper {
 	width: 250px;
 	height: 120px;
@@ -41,6 +36,12 @@
 	height: 100%;
 	object-fit: cover;
 }
+
+.destinationDetails p {
+	margin: 5px;
+}
+
+/* Modal Formatting & Style */
 
 .modalContainer {
 	color: grey;
