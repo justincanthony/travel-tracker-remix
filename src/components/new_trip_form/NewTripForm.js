@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import dayjs from 'dayjs';
 import './NewTripForm.css';
 
 const NewTripForm = ({ userID, destinationID }) => {
@@ -12,7 +13,7 @@ const NewTripForm = ({ userID, destinationID }) => {
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(newTrip),
 		};
-		fetch('http://localhost3001/api/v1/trips', requestOptions)
+		fetch('http://localhost:3001/api/v1/trips', requestOptions)
 			.then((res) => res.json())
 			.then((data) => console.log(data));
 	};
@@ -24,10 +25,10 @@ const NewTripForm = ({ userID, destinationID }) => {
 			userID,
 			destinationID,
 			travelers,
-			date,
+			date: dayjs(date).format('YYYY/MM/DD'),
 			duration,
 			status: 'pending',
-			suggestedActivites: [],
+			suggestedActivities: [],
 		};
 		sendNewTrip(newTrip);
 		setDuration('');
