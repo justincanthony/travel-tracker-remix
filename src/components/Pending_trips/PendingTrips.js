@@ -45,8 +45,8 @@ export const PendingTrips = ({ pendingTrips }) => {
 
 	return (
 		<section className="pendingTripsContainer">
-			{!error && <div className="pendingTripsWrapper">{tripsPendingCards}</div>}
 			<h2>Pending Trips</h2>
+			{!error && <div className="pendingTripsWrapper">{tripsPendingCards}</div>}
 			{notification && <ErrorMessage message={notification} />}
 		</section>
 	);
