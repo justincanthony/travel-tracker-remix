@@ -9,7 +9,7 @@ export const PendingTrips = ({ pendingTrips }) => {
 	const { id } = pendingTrips;
 	const [tripsPending, setTripsPending] = useState([]);
 	const [error, setError] = useState('');
-	const [notification, setNotification] = useState({});
+	const [notification, setNotification] = useState('');
 
 	const getTrips = () => {
 		fetchTripsByID(id)
@@ -22,7 +22,7 @@ export const PendingTrips = ({ pendingTrips }) => {
 	const cancelTrip = (id) => {
 		fetch(`http://localhost:3001/api/v1/trips/${id}`, { method: 'DELETE' })
 			.then((res) => res.json())
-			.then((data) => setNotification(data))
+			.then((data) => setNotification(data.message))
 			.catch((error) => setError(error.message));
 	};
 
@@ -36,7 +36,6 @@ export const PendingTrips = ({ pendingTrips }) => {
 
 	let tripsPendingCards;
 	if (typeof tripsPending !== 'string') {
-		console.log(tripsPending);
 		tripsPendingCards = tripsPending.map((trip) => {
 			return <TripCard key={trip.id} trip={trip} cancelTrip={cancelTrip} />;
 		});
@@ -46,8 +45,9 @@ export const PendingTrips = ({ pendingTrips }) => {
 
 	return (
 		<section className="pendingTripsContainer">
+			{!error && <div className="pendingTripsWrapper">{tripsPendingCards}</div>}
 			<h2>Pending Trips</h2>
-			<div className="pendingTripsWrapper">{tripsPendingCards}</div>
+			{notification && <ErrorMessage message={notification} />}
 		</section>
 	);
 };
