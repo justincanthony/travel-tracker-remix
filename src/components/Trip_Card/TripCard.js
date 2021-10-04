@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import React, { useState } from 'react';
 import MicroModal from 'react-micro-modal';
 import './TripCard.css';
@@ -30,13 +31,15 @@ export const TripCard = ({ trip, cancelTrip }) => {
 					{estimatedLodgingCostPerDay * duration * travelers +
 						estimatedFlightCostPerPerson * travelers}
 				</p>
-				<button
-					className="submit"
-					type="submit"
-					onClick={() => handleChange(id)}
-				>
-					Cancel Trip
-				</button>
+				{dayjs(date).isAfter(dayjs()) && (
+					<button
+						className="submit"
+						type="submit"
+						onClick={() => handleChange(id)}
+					>
+						Cancel Trip
+					</button>
+				)}
 			</section>
 		</article>
 	);
