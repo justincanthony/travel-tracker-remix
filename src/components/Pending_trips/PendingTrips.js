@@ -3,11 +3,13 @@ import './PendingTrips.css';
 import { fetchTripsByID } from '../../apiCalls';
 import { filterData } from '../../utils';
 import { TripCard } from '../Trip_Card/TripCard';
+import { ErrorMessage } from '../Error_Message/ErrorMessage';
 
 export const PendingTrips = ({ pendingTrips }) => {
 	const { id } = pendingTrips;
 	const [tripsPending, setTripsPending] = useState([]);
 	const [error, setError] = useState('');
+	const [notification, setNotification] = useState({});
 
 	const getTrips = () => {
 		fetchTripsByID(id)
@@ -18,18 +20,29 @@ export const PendingTrips = ({ pendingTrips }) => {
 	};
 
 	const cancelTrip = (id) => {
-		fetch('DELETE', `http://localhost:3001/api/v1/trips/${id}`)
+		fetch(`http://localhost:3001/api/v1/trips/${id}`, { method: 'DELETE' })
 			.then((res) => res.json())
-			.then((data) => console.log(data));
+			.then((data) => setNotification(data))
+			.catch((error) => setError(error.message));
 	};
 
 	useEffect(() => {
 		getTrips();
 	}, []);
 
-	const tripsPendingCards = tripsPending.map((trip) => (
-		<TripCard key={trip.id} trip={trip} cancelTrip={cancelTrip} />
-	));
+	useEffect(() => {
+		getTrips();
+	}, [notification]);
+
+	let tripsPendingCards;
+	if (typeof tripsPending !== 'string') {
+		console.log(tripsPending);
+		tripsPendingCards = tripsPending.map((trip) => {
+			return <TripCard key={trip.id} trip={trip} cancelTrip={cancelTrip} />;
+		});
+	} else {
+		tripsPendingCards = <ErrorMessage message={tripsPending} />;
+	}
 
 	return (
 		<section className="pendingTripsContainer">
