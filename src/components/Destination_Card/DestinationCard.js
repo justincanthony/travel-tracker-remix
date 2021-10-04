@@ -3,7 +3,7 @@ import MicroModal from 'react-micro-modal';
 import NewTripForm from '../New_Trip_Form/NewTripForm';
 import './DestinationCard.css';
 
-const DestinationCard = ({ destinationObj }) => {
+const DestinationCard = ({ destinationObj, sendNewTrip }) => {
 	const {
 		id,
 		destination,
@@ -35,7 +35,7 @@ const DestinationCard = ({ destinationObj }) => {
 								<p className="modalText">
 									Please fill out the following information.
 								</p>
-								<NewTripForm destinationID={id} userID={'38'} />
+								<NewTripForm destinationID={id} userID={'38'} sendNewTrip={sendNewTrip} />
 								<button className="modalBackButton" onClick={close}>
 									Go Back
 								</button>

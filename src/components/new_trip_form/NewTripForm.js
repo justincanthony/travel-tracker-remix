@@ -2,21 +2,12 @@ import React, { useState } from 'react';
 import dayjs from 'dayjs';
 import './NewTripForm.css';
 
-const NewTripForm = ({ userID, destinationID }) => {
+const NewTripForm = ({ userID, destinationID, sendNewTrip }) => {
 	const [travelers, setTravelers] = useState('');
 	const [duration, setDuration] = useState('');
 	const [date, setDate] = useState('');
-
-	const sendNewTrip = (newTrip) => {
-		const requestOptions = {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify(newTrip),
-		};
-		fetch('http://localhost:3001/api/v1/trips', requestOptions)
-			.then((res) => res.json())
-			.then((data) => console.log(data));
-	};
+	const [notification, setNotification] = useState('');
+	const [error, setError] = useState('');
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -60,6 +51,7 @@ const NewTripForm = ({ userID, destinationID }) => {
 				className="duration"
 				type="number"
 				placeholder="Number of Days"
+				min="1"
 				value={duration}
 				required
 				onChange={(e) => setDuration(e.target.value)}

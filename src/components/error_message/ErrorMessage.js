@@ -1,10 +1,10 @@
 import React from 'react';
-import './ErrorMessage.css'
+import './ErrorMessage.css';
 
-export const ErrorMessage = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+export const ErrorMessage = ({ message }) => {
+	return (
+		<div>
+			<p>{message}</p>
+		</div>
+	);
+};
