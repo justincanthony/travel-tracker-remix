@@ -60,6 +60,7 @@ const NewTripForm = ({ userID, destinationID }) => {
 				className="duration"
 				type="number"
 				placeholder="Number of Days"
+				min="1"
 				value={duration}
 				required
 				onChange={(e) => setDuration(e.target.value)}
