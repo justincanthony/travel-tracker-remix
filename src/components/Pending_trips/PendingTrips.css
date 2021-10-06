@@ -1,4 +1,7 @@
-.pendingTripsContainer,
+h2 {
+	text-align: center;
+}
+
 .pendingTripsWrapper {
 	display: flex;
 	flex-direction: row;

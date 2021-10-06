@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import dayjs from 'dayjs';
 import './NewTripForm.css';
 
-const NewTripForm = ({ userID, destinationID, sendNewTrip }) => {
+const NewTripForm = ({ userID, destinationID, sendNewTrip, destination }) => {
 	const [travelers, setTravelers] = useState('');
 	const [duration, setDuration] = useState('');
 	const [date, setDate] = useState('');
@@ -21,7 +21,7 @@ const NewTripForm = ({ userID, destinationID, sendNewTrip }) => {
 			status: 'pending',
 			suggestedActivities: [],
 		};
-		sendNewTrip(newTrip);
+		sendNewTrip(newTrip, destination);
 		setDuration('');
 		setTravelers('');
 		setDate('');

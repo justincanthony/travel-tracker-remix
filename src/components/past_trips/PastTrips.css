@@ -1,4 +1,7 @@
-.pastTripsContainer,
+h2 {
+	text-align: center;
+}
+
 .pastTripsCardWrapper {
 	display: flex;
 	flex-direction: row;

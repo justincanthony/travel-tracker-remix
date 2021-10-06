@@ -1,8 +1,10 @@
-.destinationsContainer,
+h2 {
+	text-align: center;
+}
+
 .destinationsCardWrapper {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	flex-wrap: wrap;
-	/* background-color: rgb(135, 209, 241); */
 }

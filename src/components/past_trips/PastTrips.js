@@ -5,28 +5,28 @@ import { TripCard } from '../Trip_Card/TripCard';
 import './PastTrips.css';
 
 export const PastTrips = ({ pastTrips }) => {
-  const { id } = pastTrips;
+	const { id } = pastTrips;
 
-  const [tripsPast, setTripsPast] = useState([]);
+	const [tripsPast, setTripsPast] = useState([]);
 
-  const getTrips = () => {
-    fetchTripsByID(id).then((data) =>
-      setTripsPast(filterData.getPastTrips(data.requestedTrips))
-    );
-  };
+	const getTrips = () => {
+		fetchTripsByID(id).then((data) =>
+			setTripsPast(filterData.getPastTrips(data.requestedTrips))
+		);
+	};
 
-  useEffect(() => {
-    getTrips();
-  }, []);
+	useEffect(() => {
+		getTrips();
+	}, []);
 
-  const pastTripCards = tripsPast.map((trip) => {
-    return <TripCard key={trip.id} trip={trip} />;
-  });
+	const pastTripCards = tripsPast.map((trip) => {
+		return <TripCard key={trip.id} trip={trip} />;
+	});
 
-  return (
-    <section className="pastTripsContainer">
-      <h3>Past Trips</h3>
-      <section className="pastTripsCardWrapper">{pastTripCards}</section>
-    </section>
-  );
+	return (
+		<section className="pastTripsContainer">
+			<h2>Past Trips</h2>
+			<section className="pastTripsCardWrapper">{pastTripCards}</section>
+		</section>
+	);
 };

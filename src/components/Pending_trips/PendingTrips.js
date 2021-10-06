@@ -3,6 +3,7 @@ import './PendingTrips.css';
 import { fetchTripsByID } from '../../apiCalls';
 import { filterData } from '../../utils';
 import { TripCard } from '../Trip_Card/TripCard';
+import { toast } from 'react-toastify';
 import { ErrorMessage } from '../Error_Message/ErrorMessage';
 
 export const PendingTrips = ({ pendingTrips }) => {
@@ -45,8 +46,8 @@ export const PendingTrips = ({ pendingTrips }) => {
 
 	return (
 		<section className="pendingTripsContainer">
-			{!error && <div className="pendingTripsWrapper">{tripsPendingCards}</div>}
 			<h2>Pending Trips</h2>
+			{!error && <div className="pendingTripsWrapper">{tripsPendingCards}</div>}
 			{notification && <ErrorMessage message={notification} />}
 		</section>
 	);

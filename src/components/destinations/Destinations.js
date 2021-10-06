@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { fetchData } from '../../apiCalls';
 import DestinationCard from '../Destination_Card/DestinationCard';
 import './Destinations.css';
@@ -14,16 +16,24 @@ export const Destinations = (params) => {
 			.catch((error) => setError(error.message));
 	};
 
-	const sendNewTrip = (newTrip) => {
+	const sendNewTrip = (newTrip, destination) => {
 		const requestOptions = {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(newTrip),
 		};
-		fetch('http://localhost:3001/api/v1/trips', requestOptions)
-			.then((res) => res.json())
-			.then((data) => setNotification(data.message))
-			.catch((error) => setError(error.message));
+
+		toast.promise(
+			fetch('http://localhost:3001/api/v1/trips', requestOptions)
+				.then((res) => res.json())
+				.then((data) => setNotification(data.message))
+				.catch((error) => setError(error.message)),
+			{
+				pending: 'Please wait while we make your request',
+				success: `Your trip request to ${destination} has been made`,
+				error: 'Whoops! Something went wrong. Please try again',
+			}
+		);
 	};
 
 	const destinationCards = destinations.map((destinationObj) => (
@@ -47,3 +57,5 @@ export const Destinations = (params) => {
 };
 
 export default Destinations;
+
+
