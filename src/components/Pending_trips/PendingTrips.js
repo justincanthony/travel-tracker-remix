@@ -3,6 +3,7 @@ import './PendingTrips.css';
 import { fetchTripsByID } from '../../apiCalls';
 import { filterData } from '../../utils';
 import { TripCard } from '../Trip_Card/TripCard';
+import { toast } from 'react-toastify';
 import { ErrorMessage } from '../Error_Message/ErrorMessage';
 
 export const PendingTrips = ({ pendingTrips }) => {
