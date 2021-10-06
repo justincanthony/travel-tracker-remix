@@ -35,7 +35,12 @@ const DestinationCard = ({ destinationObj, sendNewTrip }) => {
 								<p className="modalText">
 									Please fill out the following information.
 								</p>
-								<NewTripForm destinationID={id} userID={'38'} sendNewTrip={sendNewTrip} />
+								<NewTripForm
+									destinationID={id}
+									destination={destination}
+									userID={'38'}
+									sendNewTrip={sendNewTrip}
+								/>
 								<button className="modalBackButton" onClick={close}>
 									Go Back
 								</button>
