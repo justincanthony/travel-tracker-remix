@@ -50,7 +50,6 @@ export const Destinations = (params) => {
 
 	return (
 		<section className="destinationsContainer">
-			{/* <ToastContainer /> */}
 			<h2>Destinations</h2>
 			<div className="destinationsCardWrapper">{destinationCards}</div>
 		</section>
