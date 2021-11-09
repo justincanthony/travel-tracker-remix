@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './PendingTrips.css';
 import { TripCard } from '../Trip_Card/TripCard';
 
 export const PendingTrips = ({ tripsPending, cancelTrip }) => {
-  const tripsPendingCards = tripsPending.map((trip) => {
-    return <TripCard key={trip.id} trip={trip} cancelTrip={cancelTrip} />;
-  });
+  const [error, setError] = useState('');
+
+  let tripsPendingCards;
+  if (tripsPendingCards.length > 0) {
+    tripsPendingCards = tripsPending.map((trip) => {
+      return <TripCard key={trip.id} trip={trip} cancelTrip={cancelTrip} />;
+    });
+  } else {
+    setError('Looks Like you need to book some trips!');
+  }
 
   return (
     <section className="pendingTripsContainer">
