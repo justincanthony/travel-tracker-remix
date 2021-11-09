@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import './UserDashboard.css';
 import Destinations from '../Destinations/Destinations';
 import Navbar from '../Navbar/Navbar';
@@ -29,7 +29,7 @@ export const UserDashboard = ({ userID }) => {
   const sendNewTrip = (newTrip, destination) => {
     toast.promise(
       bookTrip(newTrip)
-        .then((data) => setNotification(data.message))
+        .then((data) => console.log(data.message))
         .catch((error) => setError(error.message)),
       {
         pending: 'Please wait while we make your request',
@@ -58,19 +58,17 @@ export const UserDashboard = ({ userID }) => {
     getTrips();
   }, []);
 
-  useEffect(() => {
-    getTrips();
-  }, [notification]);
-
   return (
     <React.Fragment>
       <Navbar />
-      <Destinations
-        destinations={destinations}
-        userID={userID}
-        sendNewTrip={sendNewTrip}
-      />
-      {tripsPending.length > 0 && (
+      {destinations && (
+        <Destinations
+          destinations={destinations}
+          userID={userID}
+          sendNewTrip={sendNewTrip}
+        />
+      )}
+      {tripsPending && (
         <PendingTrips tripsPending={tripsPending} cancelTrip={cancelTrip} />
       )}
       {/* <PastTrips userID={userID} /> */}
