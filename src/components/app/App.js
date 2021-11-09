@@ -6,6 +6,7 @@ import { Login } from '../Login/Login';
 import { PendingTrips } from '../Pending_trips/PendingTrips';
 import { PastTrips } from '../Past_Trips/PastTrips';
 import { ToastContainer } from 'react-toastify';
+import { UserDashboard } from '../UserDashboard/UserDashboard';
 
 const App = () => {
   return (
@@ -16,10 +17,10 @@ const App = () => {
         <Route exact path="/" render={() => <Login />} />
         <Route
           exact
-          path="/:destinations"
+          path="/user_dashboard/:userID"
           render={({ match }) => {
             const { params } = match;
-            return <Destinations destinations={params.destinations} />;
+            return <UserDashboard userID={params.userID} />;
           }}
         />
         <Route
