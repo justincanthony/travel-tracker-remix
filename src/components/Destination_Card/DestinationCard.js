@@ -3,54 +3,54 @@ import MicroModal from 'react-micro-modal';
 import NewTripForm from '../New_Trip_Form/NewTripForm';
 import './DestinationCard.css';
 
-const DestinationCard = ({ destinationObj, sendNewTrip }) => {
-	const {
-		id,
-		destination,
-		estimatedLodgingCostPerDay,
-		estimatedFlightCostPerPerson,
-		image,
-	} = destinationObj;
+const DestinationCard = ({ userID, destinationObj, sendNewTrip }) => {
+  const {
+    id,
+    destination,
+    estimatedLodgingCostPerDay,
+    estimatedFlightCostPerPerson,
+    image,
+  } = destinationObj;
 
-	return (
-		<article className="destinationCard" key={id} id={id}>
-			<h3 className="destinationTitle">{destination}</h3>
-			<div className="destinationImageWrapper">
-				<img className="destinationImage" src={image} alt={destination} />
-			</div>
-			<section className="destinationDetails">
-				<p>Lodging Cost Per Day: ${estimatedLodgingCostPerDay}</p>
-				<p>Flight Cost Per Person: ${estimatedFlightCostPerPerson}</p>
-				<MicroModal
-					trigger={(open) => (
-						<div onClick={open}>
-							<button>Book Me!</button>
-						</div>
-					)}
-				>
-					{(close) => {
-						return (
-							<article className="modalContainer">
-								<h3 className="modalTitle">Book Your Trip to {destination}</h3>
-								<p className="modalText">
-									Please fill out the following information.
-								</p>
-								<NewTripForm
-									destinationID={id}
-									destination={destination}
-									userID={'38'}
-									sendNewTrip={sendNewTrip}
-								/>
-								<button className="modalBackButton" onClick={close}>
-									Go Back
-								</button>
-							</article>
-						);
-					}}
-				</MicroModal>
-			</section>
-		</article>
-	);
+  return (
+    <article className="destinationCard" key={id} id={id}>
+      <h3 className="destinationTitle">{destination}</h3>
+      <div className="destinationImageWrapper">
+        <img className="destinationImage" src={image} alt={destination} />
+      </div>
+      <section className="destinationDetails">
+        <p>Lodging Cost Per Day: ${estimatedLodgingCostPerDay}</p>
+        <p>Flight Cost Per Person: ${estimatedFlightCostPerPerson}</p>
+        <MicroModal
+          trigger={(open) => (
+            <div onClick={open}>
+              <button>Book Me!</button>
+            </div>
+          )}
+        >
+          {(close) => {
+            return (
+              <article className="modalContainer">
+                <h3 className="modalTitle">Book Your Trip to {destination}</h3>
+                <p className="modalText">
+                  Please fill out the following information.
+                </p>
+                <NewTripForm
+                  destinationID={id}
+                  destination={destination}
+                  userID={userID}
+                  sendNewTrip={sendNewTrip}
+                />
+                <button className="modalBackButton" onClick={close}>
+                  Go Back
+                </button>
+              </article>
+            );
+          }}
+        </MicroModal>
+      </section>
+    </article>
+  );
 };
 
 export default DestinationCard;
