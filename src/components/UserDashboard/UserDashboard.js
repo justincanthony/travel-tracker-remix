@@ -1,13 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './UserDashboard.css';
 import Destinations from '../Destinations/Destinations';
 import Navbar from '../Navbar/Navbar';
 import { toast } from 'react-toastify';
 import { filterData } from '../../utils';
-import { fetchData } from '../../apiCalls';
-import { fetchTripsByID } from '../../apiCalls';
+import {
+  fetchData,
+  bookTrip,
+  fetchTripsByID,
+  deleteTrip,
+} from '../../apiCalls';
+
 import { PendingTrips } from '../Pending_trips/PendingTrips';
-import { PastTrips } from '../Past_Trips/PastTrips';
+// import { PastTrips } from '../Past_Trips/PastTrips';
 
 export const UserDashboard = ({ userID }) => {
   const [tripsPending, setTripsPending] = useState([]);
@@ -22,15 +27,8 @@ export const UserDashboard = ({ userID }) => {
   };
 
   const sendNewTrip = (newTrip, destination) => {
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(newTrip),
-    };
-
     toast.promise(
-      fetch('http://localhost:3001/api/v1/trips', requestOptions)
-        .then((res) => res.json())
+      bookTrip(newTrip)
         .then((data) => setNotification(data.message))
         .catch((error) => setError(error.message)),
       {
@@ -50,8 +48,7 @@ export const UserDashboard = ({ userID }) => {
   };
 
   const cancelTrip = (id) => {
-    fetch(`http://localhost:3001/api/v1/trips/${id}`, { method: 'DELETE' })
-      .then((res) => res.json())
+    deleteTrip(id)
       .then((data) => setNotification(data.message))
       .catch((error) => setError(error.message));
   };
@@ -73,7 +70,9 @@ export const UserDashboard = ({ userID }) => {
         userID={userID}
         sendNewTrip={sendNewTrip}
       />
-      <PendingTrips tripsPending={tripsPending} cancelTrip={cancelTrip} />
+      {tripsPending.length > 0 && (
+        <PendingTrips tripsPending={tripsPending} cancelTrip={cancelTrip} />
+      )}
       {/* <PastTrips userID={userID} /> */}
     </React.Fragment>
   );
