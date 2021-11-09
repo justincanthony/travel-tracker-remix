@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
-import { fetchData } from '../../apiCalls';
+
 import DestinationCard from '../Destination_Card/DestinationCard';
 import './Destinations.css';
 
