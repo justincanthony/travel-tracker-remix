@@ -54,6 +54,19 @@ export const bookTrip = async (newTrip) => {
   }
 };
 
+export const deleteTrip = async (id) => {
+  const response = await fetch(`http://localhost:3001/api/v1/trips/${id}`, {
+    method: 'DELETE',
+  });
+  if (response.status >= 400) {
+    return response.json().then((res) => {
+      throw new Error(res.message);
+    });
+  } else {
+    return response.json();
+  }
+};
+
 // Different Version of Fetch
 // export const fetchTraveler = (username, password) => {
 //   return fetch(
