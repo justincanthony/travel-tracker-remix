@@ -4,27 +4,15 @@ import Destinations from '../Destinations/Destinations';
 import Navbar from '../Navbar/Navbar';
 import { toast } from 'react-toastify';
 import { filterData } from '../../utils';
-import {
-  fetchData,
-  bookTrip,
-  fetchTripsByID,
-  deleteTrip,
-} from '../../apiCalls';
+import { bookTrip, fetchTripsByID, deleteTrip } from '../../apiCalls';
 
 import { PendingTrips } from '../Pending_trips/PendingTrips';
 // import { PastTrips } from '../Past_Trips/PastTrips';
 
 export const UserDashboard = ({ userID }) => {
   const [tripsPending, setTripsPending] = useState([]);
-  const [destinations, setDestinations] = useState([]);
-  const [error, setError] = useState('');
   const [notification, setNotification] = useState('');
-
-  const getDestinations = () => {
-    fetchData()
-      .then((data) => setDestinations(data.destinations))
-      .catch((error) => setError(error.message));
-  };
+  const [error, setError] = useState('');
 
   const sendNewTrip = (newTrip, destination) => {
     toast.promise(
@@ -54,23 +42,16 @@ export const UserDashboard = ({ userID }) => {
   };
 
   useEffect(() => {
-    getDestinations();
     getTrips();
   }, []);
 
   return (
     <React.Fragment>
       <Navbar />
-      {destinations && (
-        <Destinations
-          destinations={destinations}
-          userID={userID}
-          sendNewTrip={sendNewTrip}
-        />
-      )}
-      {tripsPending && (
+      <Destinations userID={userID} sendNewTrip={sendNewTrip} />
+      {/* {tripsPending && (
         <PendingTrips tripsPending={tripsPending} cancelTrip={cancelTrip} />
-      )}
+      )} */}
       {/* <PastTrips userID={userID} /> */}
     </React.Fragment>
   );
