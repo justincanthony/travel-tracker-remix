@@ -55,7 +55,7 @@ export const Login = () => {
         </form>
       )}
       {!isLoggedIn && error && <ErrorMessage message={error} />}
-      {isLoggedIn && <Redirect push to={'/destinations'} />}
+      {isLoggedIn && <Redirect push to={`/user_dashboard/${userID}`} />}
     </React.Fragment>
   );
 };
