@@ -5,16 +5,20 @@ export const filterData = {
     const pendingTrips = data.filter((trip) => trip.status === 'pending');
 
     if (pendingTrips.length < 1) {
-      return 'You do not have any current trip requests. Please visit Destinations to book your next trip!';
+      throw new Error(
+        'You do not have any current trip requests. Please visit Destinations to book your next trip!'
+      );
     } else {
-      return pendingTrips;
+      return pendingTrips.filter(
+        (trip) => dayjs(trip.date).isAfter(dayjs()) === true
+      );
     }
   },
 
   getApprovedTrips(data) {
     const approvedTrips = data.filter((trip) => trip.status === 'approved');
     if (approvedTrips.length < 1) {
-      return 'You have no approved Trips';
+      throw new Error('You have no approved Trips');
     } else {
       return approvedTrips;
     }
@@ -23,10 +27,21 @@ export const filterData = {
   getPastTrips(data) {
     const approvedTrips = this.getApprovedTrips(data);
     if (approvedTrips.length < 1) {
-      return 'You have not taken any trips yet. Please visit Destinations to book your next adventure!';
+      throw new Error('You have not taken any trips.');
     } else {
       return approvedTrips.filter(
         (trip) => dayjs(trip.date).isBefore(dayjs()) === true
+      );
+    }
+  },
+
+  getFutureTrips(data) {
+    const approvedTrips = this.getApprovedTrips(data);
+    if (approvedTrips.length < 1) {
+      throw new Error('You do not have any upcoming trips.');
+    } else {
+      return approvedTrips.filter(
+        (trip) => dayjs(trip.date).isAfter(dayjs()) === true
       );
     }
   },
