@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import MicroModal from 'react-micro-modal';
 import NewTripForm from '../New_Trip_Form/NewTripForm';
 import './DestinationCard.css';
