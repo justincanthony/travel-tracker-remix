@@ -16,6 +16,7 @@ export const fetchTripsByID = async (id) => {
       throw new Error(res.message);
     });
   } else {
+    console.log(response.status);
     return response.json();
   }
 };
@@ -31,6 +32,15 @@ export const fetchTraveler = async (username, password) => {
   } else {
     return response.json();
   }
+};
+
+export const bookTrip = (newTrip) => {
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(newTrip),
+  };
+  fetch('http://localhost:3001/api/v1/trips', requestOptions);
 };
 
 // Different Version of Fetch
