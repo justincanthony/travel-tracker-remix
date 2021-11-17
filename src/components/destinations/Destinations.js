@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { fetchData } from '../../apiCalls';
 import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 import DestinationCard from '../Destination_Card/DestinationCard';
 import './Destinations.css';
+import { bookTrip } from '../../apiCalls';
 import { ErrorMessage } from '../Error_Message/ErrorMessage';
 
-export const Destinations = ({ userID, sendNewTrip }) => {
+export const Destinations = ({ userID }) => {
   const [destinations, setDestinations] = useState([]);
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(true);
@@ -17,6 +19,19 @@ export const Destinations = ({ userID, sendNewTrip }) => {
         setIsLoading(false);
       })
       .catch((error) => setError(error.message));
+  };
+
+  const sendNewTrip = (newTrip, destination) => {
+    toast.promise(
+      bookTrip(newTrip)
+        .then((data) => console.log(data.message))
+        .catch((error) => setError(error.message)),
+      {
+        pending: 'Please wait while we make your request',
+        success: `Your trip request to ${destination} has been made`,
+        error: 'Whoops! Something went wrong. Please try again',
+      }
+    );
   };
 
   useEffect(() => {
