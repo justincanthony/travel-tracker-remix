@@ -19,22 +19,6 @@ const App = () => {
             return <UserDashboard userID={params.userID} />;
           }}
         />
-        {/* <Route
-          exact
-          path="/pending_trips/user/:id"
-          render={({ match }) => {
-            const { params } = match;
-            return <PendingTrips pendingTrips={params} />;
-          }}
-        />
-        <Route
-          exact
-          path="/past_trips/user/:id"
-          render={({ match }) => {
-            const { params } = match;
-            return <PastTrips pastTrips={params} />;
-          }}
-        /> */}
         {/* <Route render={() => <ErrorPage/>}/> */}
       </Switch>
     </div>
