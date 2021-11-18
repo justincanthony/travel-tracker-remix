@@ -16,7 +16,6 @@ export const fetchTripsByID = async (id) => {
       throw new Error(res.message);
     });
   } else {
-    console.log(response.status);
     return response.json();
   }
 };
@@ -66,17 +65,3 @@ export const deleteTrip = async (id) => {
     return response.json();
   }
 };
-
-// Different Version of Fetch
-// export const fetchTraveler = (username, password) => {
-//   return fetch(
-//     `http://localhost:3001/api/v1/travelers/${username}/${password}`
-//   ).then((response) => {
-//     if (response.status >= 400) {
-//       return response.json().then((res) => {
-//         throw new Error(res.message);
-//       });
-//     } else {
-//       return response.json();
-//     }
-//   });
