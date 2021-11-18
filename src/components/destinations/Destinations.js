@@ -23,6 +23,7 @@ export const Destinations = ({ userID }) => {
   };
 
   const sendNewTrip = (newTrip, destination) => {
+    setError('');
     toast.promise(
       bookTrip(newTrip)
         .then((data) => {
