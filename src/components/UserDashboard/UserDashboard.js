@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './UserDashboard.css';
 import Destinations from '../Destinations/Destinations';
 import { DashboardNavbar } from '../Dashboard_Navbar/DashboardNavbar';
+import { UserDetails } from '../User_Details/UserDetails';
 import { ErrorMessage } from '../Error_Message/ErrorMessage';
 import { PendingTrips } from '../Pending_trips/PendingTrips';
 import { PastTrips } from '../Past_Trips/PastTrips';
