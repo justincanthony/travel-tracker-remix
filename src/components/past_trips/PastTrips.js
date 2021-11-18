@@ -10,18 +10,17 @@ export const PastTrips = ({ userID }) => {
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(true);
 
-  const getTrips = () => {
-    fetchTripsByID(userID)
-      .then((data) => {
-        setTripsPast(filterData.getPastTrips(data.requestedTrips));
-        setIsLoading(false);
-      })
-      .catch((error) => setError(error.message));
-  };
-
   useEffect(() => {
+    const getTrips = () => {
+      fetchTripsByID(userID)
+        .then((data) => {
+          setTripsPast(filterData.getPastTrips(data.requestedTrips));
+          setIsLoading(false);
+        })
+        .catch((error) => setError(error.message));
+    };
     getTrips();
-  }, []);
+  }, [userID]);
 
   const pastTripCards = tripsPast.map((trip) => {
     return <TripCard key={trip.id} trip={trip} />;
