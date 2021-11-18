@@ -1,61 +1,64 @@
 import React, { useState, useEffect } from 'react';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { fetchData } from '../../apiCalls';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 import DestinationCard from '../Destination_Card/DestinationCard';
 import './Destinations.css';
+import { bookTrip } from '../../apiCalls';
+import { ErrorMessage } from '../Error_Message/ErrorMessage';
 
-export const Destinations = (params) => {
-	const [destinations, setDestinations] = useState([]);
-	const [error, setError] = useState('');
-	const [notification, setNotification] = useState('');
+export const Destinations = ({ userID }) => {
+  const [destinations, setDestinations] = useState([]);
+  const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
 
-	const getDestinations = () => {
-		fetchData(params.destinations)
-			.then((data) => setDestinations(data.destinations))
-			.catch((error) => setError(error.message));
-	};
+  const getDestinations = () => {
+    fetchData()
+      .then((data) => {
+        setDestinations(data.destinations);
+        setIsLoading(false);
+      })
+      .catch((error) => setError(error.message));
+  };
 
-	const sendNewTrip = (newTrip, destination) => {
-		const requestOptions = {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify(newTrip),
-		};
+  const sendNewTrip = (newTrip, destination) => {
+    toast.promise(
+      bookTrip(newTrip)
+        .then((data) => console.log(data.message))
+        .catch((error) => setError(error.message)),
+      {
+        pending: 'Please wait while we make your request',
+        success: `Your trip request to ${destination} has been made`,
+        error: 'Whoops! Something went wrong. Please try again',
+      }
+    );
+  };
 
-		toast.promise(
-			fetch('http://localhost:3001/api/v1/trips', requestOptions)
-				.then((res) => res.json())
-				.then((data) => setNotification(data.message))
-				.catch((error) => setError(error.message)),
-			{
-				pending: 'Please wait while we make your request',
-				success: `Your trip request to ${destination} has been made`,
-				error: 'Whoops! Something went wrong. Please try again',
-			}
-		);
-	};
+  useEffect(() => {
+    getDestinations();
+  }, []);
 
-	const destinationCards = destinations.map((destinationObj) => (
-		<DestinationCard
-			key={destinationObj.id}
-			destinationObj={destinationObj}
-			sendNewTrip={sendNewTrip}
-		/>
-	));
+  const destinationCards = destinations.map((destinationObj) => (
+    <DestinationCard
+      key={destinationObj.id}
+      destinationObj={destinationObj}
+      sendNewTrip={sendNewTrip}
+      userID={userID}
+    />
+  ));
 
-	useEffect(() => {
-		getDestinations();
-	}, []);
-
-	return (
-		<section className="destinationsContainer">
-			<h2>Destinations</h2>
-			<div className="destinationsCardWrapper">{destinationCards}</div>
-		</section>
-	);
+  return (
+    <React.Fragment>
+      {isLoading && <p>Loading...</p>}
+      {error && <ErrorMessage message={error} />}
+      {!isLoading && (
+        <section className="destinationsContainer">
+          <h2>Destinations</h2>
+          <div className="destinationsCardWrapper">{destinationCards}</div>
+        </section>
+      )}
+    </React.Fragment>
+  );
 };
 
 export default Destinations;
-
-

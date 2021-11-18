@@ -1,43 +1,41 @@
-import Destinations from '../Destinations/Destinations';
-import Navbar from '../Navbar/Navbar';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import { Login } from '../Login/Login';
-import { PendingTrips } from '../Pending_trips/PendingTrips';
-import { PastTrips } from '../Past_Trips/PastTrips';
 import { ToastContainer } from 'react-toastify';
+import { UserDashboard } from '../UserDashboard/UserDashboard';
 
 const App = () => {
   return (
     <div className="App">
       <ToastContainer />
-      <Navbar />
+      {/* <Navbar /> */}
       <Switch>
         <Route exact path="/" render={() => <Login />} />
         <Route
           exact
-          path="/:destinations"
+          path="/user_dashboard/:userID"
           render={({ match }) => {
             const { params } = match;
-            return <Destinations destinations={params.destinations} />;
+            return <UserDashboard userID={params.userID} type="pendingTrips" />;
           }}
         />
         <Route
           exact
-          path="/pending_trips/user/:id"
+          path="/destinations/:userID"
           render={({ match }) => {
             const { params } = match;
-            return <PendingTrips pendingTrips={params} />;
+            return <UserDashboard userID={params.userID} type="destinations" />;
           }}
         />
         <Route
           exact
-          path="/past_trips/user/:id"
+          path="/past_trips/:userID"
           render={({ match }) => {
             const { params } = match;
-            return <PastTrips pastTrips={params} />;
+            return <UserDashboard userID={params.userID} type="pastTrips" />;
           }}
         />
+        {/* <Route render={() => <ErrorPage/>}/> */}
       </Switch>
     </div>
   );

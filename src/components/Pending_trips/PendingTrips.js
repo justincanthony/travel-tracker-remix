@@ -1,54 +1,69 @@
 import React, { useState, useEffect } from 'react';
 import './PendingTrips.css';
-import { fetchTripsByID } from '../../apiCalls';
 import { filterData } from '../../utils';
-import { TripCard } from '../Trip_Card/TripCard';
-import { toast } from 'react-toastify';
+import { fetchTripsByID, deleteTrip } from '../../apiCalls';
 import { ErrorMessage } from '../Error_Message/ErrorMessage';
+import { TripCard } from '../Trip_Card/TripCard';
 
-export const PendingTrips = ({ pendingTrips }) => {
-	const { id } = pendingTrips;
-	const [tripsPending, setTripsPending] = useState([]);
-	const [error, setError] = useState('');
-	const [notification, setNotification] = useState('');
+export const PendingTrips = ({ userID }) => {
+  const [tripsPending, setTripsPending] = useState([]);
+  const [notification, setNotification] = useState('');
+  const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
 
-	const getTrips = () => {
-		fetchTripsByID(id)
-			.then((data) =>
-				setTripsPending(filterData.getPendingTrips(data.requestedTrips))
-			)
-			.catch((error) => setError(error.message));
-	};
+  const cancelTrip = (id) => {
+    deleteTrip(id)
+      .then((data) => setNotification(data.message))
+      .catch((error) => setError(error.message));
+  };
 
-	const cancelTrip = (id) => {
-		fetch(`http://localhost:3001/api/v1/trips/${id}`, { method: 'DELETE' })
-			.then((res) => res.json())
-			.then((data) => setNotification(data.message))
-			.catch((error) => setError(error.message));
-	};
+  const getTrips = () => {
+    fetchTripsByID(userID)
+      .then((data) => {
+        setTripsPending(filterData.getPendingTrips(data.requestedTrips));
+        setIsLoading(false);
+      })
+      .catch((error) => setError(error.message));
+  };
 
-	useEffect(() => {
-		getTrips();
-	}, []);
+  useEffect(() => {
+    getTrips();
+  }, []);
 
-	useEffect(() => {
-		getTrips();
-	}, [notification]);
+  const tripsPendingCards = tripsPending.map((trip) => {
+    return (
+      <TripCard
+        key={trip.id}
+        trip={trip}
+        userID={userID}
+        cancelTrip={cancelTrip}
+      />
+    );
+  });
 
-	let tripsPendingCards;
-	if (typeof tripsPending !== 'string') {
-		tripsPendingCards = tripsPending.map((trip) => {
-			return <TripCard key={trip.id} trip={trip} cancelTrip={cancelTrip} />;
-		});
-	} else {
-		tripsPendingCards = <ErrorMessage message={tripsPending} />;
-	}
-
-	return (
-		<section className="pendingTripsContainer">
-			<h2>Pending Trips</h2>
-			{!error && <div className="pendingTripsWrapper">{tripsPendingCards}</div>}
-			{notification && <ErrorMessage message={notification} />}
-		</section>
-	);
+  return (
+    <section className="pendingTripsContainer">
+      {isLoading && !error && <p>"We are getting your trips...</p>}
+      {!isLoading && !error && tripsPendingCards.length > 0 && (
+        <React.Fragment>
+          <h2>Pending Trips</h2>
+          {console.log(tripsPendingCards)}
+          <div className="pendingTripsWrapper">{tripsPendingCards}</div>
+        </React.Fragment>
+      )}
+      {!isLoading && !error && tripsPendingCards.length < 1 && (
+        <React.Fragment>
+          <h2>Pending Trips</h2>
+          <div className="pendingTripsWrapper">
+            <ErrorMessage
+              message={
+                'Looks like you do not have any upcoming trips. Please visit destinations to book your next adventure!'
+              }
+            />
+          </div>
+        </React.Fragment>
+      )}
+      {error && <ErrorMessage message={error} />}
+    </section>
+  );
 };
