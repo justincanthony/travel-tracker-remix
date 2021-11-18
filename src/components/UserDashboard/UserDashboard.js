@@ -9,11 +9,12 @@ import { fetchTravelerByID } from '../../apiCalls';
 
 export const UserDashboard = ({ userID, type }) => {
   const [traveler, setTraveler] = useState({});
+  const [loading, isLoading] = useState(true);
 
   useEffect(() => {
     const getTravelerByID = (userID) => {
       fetchTravelerByID(userID).then((data) => {
-        console.log(data);
+        setTraveler(data);
       });
     };
     getTravelerByID(userID);
