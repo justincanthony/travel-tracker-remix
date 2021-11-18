@@ -16,7 +16,23 @@ const App = () => {
           path="/user_dashboard/:userID"
           render={({ match }) => {
             const { params } = match;
-            return <UserDashboard userID={params.userID} />;
+            return <UserDashboard userID={params.userID} type="pendingTrips" />;
+          }}
+        />
+        <Route
+          exact
+          path="/destinations/:userID"
+          render={({ match }) => {
+            const { params } = match;
+            return <UserDashboard userID={params.userID} type="destinations" />;
+          }}
+        />
+        <Route
+          exact
+          path="/past_trips/:userID"
+          render={({ match }) => {
+            const { params } = match;
+            return <UserDashboard userID={params.userID} type="pastTrips" />;
           }}
         />
         {/* <Route render={() => <ErrorPage/>}/> */}
