@@ -21,7 +21,7 @@ export const DashboardNavbar = ({ userID }) => {
           </li>
           <br />
           <li>
-            <Link className="links" to={`/pastTrips/${userID}`}>
+            <Link className="links" to={`/past_trips/${userID}`}>
               Past Trips
             </Link>
           </li>
