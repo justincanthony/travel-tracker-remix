@@ -28,6 +28,7 @@ export const UserDashboard = ({ userID, type }) => {
   return (
     <React.Fragment>
       <DashboardNavbar userID={userID} traveler={traveler} />
+      {!isLoading && !error && traveler && <UserDetails traveler={traveler} />}
       {type === 'pendingTrips' && <PendingTrips userID={userID} />}
       {type === 'destinations' && <Destinations userID={userID} />}
       {type === 'pastTrips' && <PastTrips userID={userID} />}
