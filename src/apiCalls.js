@@ -33,6 +33,19 @@ export const fetchTraveler = async (username, password) => {
   }
 };
 
+export const fetchTravelerByID = async (userID) => {
+  const response = await fetch(
+    `http://localhost:3001/api/v1/travelers/${userID}`
+  );
+  if (response.status >= 400) {
+    return response.json().then((res) => {
+      throw new Error(res.message);
+    });
+  } else {
+    return response.json();
+  }
+};
+
 export const bookTrip = async (newTrip) => {
   const requestOptions = {
     method: 'POST',
