@@ -11,6 +11,7 @@ export const Destinations = ({ userID }) => {
   const [destinations, setDestinations] = useState([]);
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(true);
+  const [newTrip, setNewTrip] = useState({});
 
   const getDestinations = () => {
     fetchData()
@@ -24,11 +25,15 @@ export const Destinations = ({ userID }) => {
   const sendNewTrip = (newTrip, destination) => {
     toast.promise(
       bookTrip(newTrip)
-        .then((data) => console.log(data.message))
+        .then((data) => {
+          setNewTrip(data.newTrip);
+          console.log(newTrip);
+        })
+
         .catch((error) => setError(error.message)),
       {
         pending: 'Please wait while we make your request',
-        success: `Your trip request to ${destination} has been made`,
+        success: `Your trip request for ${newTrip.travelers} travelers to ${destination} on ${newTrip.date} for ${newTrip.duration} days has been made`,
         error: 'Whoops! Something went wrong. Please try again',
       }
     );
