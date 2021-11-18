@@ -15,6 +15,15 @@ export const PendingTrips = ({ userID }) => {
     deleteTrip(id)
       .then((data) => setNotification(data.message))
       .catch((error) => setError(error.message));
+    const getTrips = () => {
+      fetchTripsByID(userID)
+        .then((data) => {
+          setTripsPending(filterData.getPendingTrips(data.requestedTrips));
+          setIsLoading(false);
+        })
+        .catch((error) => setError(error.message));
+    };
+    getTrips();
   };
 
   useEffect(() => {
