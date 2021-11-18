@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
 import dayjs from 'dayjs';
 import './NewTripForm.css';
+import { Button } from '@mui/material';
 
-const NewTripForm = ({ userID, destinationID, sendNewTrip, destination }) => {
+const NewTripForm = ({
+  userID,
+  destinationID,
+  sendNewTrip,
+  destination,
+  close,
+}) => {
   const [travelers, setTravelers] = useState('');
   const [duration, setDuration] = useState('');
   const [date, setDate] = useState('');
@@ -54,9 +61,17 @@ const NewTripForm = ({ userID, destinationID, sendNewTrip, destination }) => {
         required
         onChange={(e) => setDuration(e.target.value)}
       />
-      <button className="submit" type="submit" onClick={(e) => handleSubmit(e)}>
+      <Button
+        variant="contained"
+        className="submit"
+        type="submit"
+        onClick={(e) => {
+          handleSubmit(e);
+          close();
+        }}
+      >
         Book It!
-      </button>
+      </Button>
     </form>
   );
 };

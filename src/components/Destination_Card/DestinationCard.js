@@ -1,6 +1,7 @@
 import MicroModal from 'react-micro-modal';
 import NewTripForm from '../New_Trip_Form/NewTripForm';
 import './DestinationCard.css';
+import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
 
 const DestinationCard = ({ userID, destinationObj, sendNewTrip }) => {
   const {
@@ -30,6 +31,7 @@ const DestinationCard = ({ userID, destinationObj, sendNewTrip }) => {
           {(close) => {
             return (
               <article className="modalContainer">
+                <FlightTakeoffIcon />
                 <h3 className="modalTitle">Book Your Trip to {destination}</h3>
                 <p className="modalText">
                   Please fill out the following information.
@@ -39,6 +41,7 @@ const DestinationCard = ({ userID, destinationObj, sendNewTrip }) => {
                   destination={destination}
                   userID={userID}
                   sendNewTrip={sendNewTrip}
+                  close={close}
                 />
                 <button className="modalBackButton" onClick={close}>
                   Go Back
