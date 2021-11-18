@@ -11,9 +11,12 @@ export const PastTrips = ({ userID }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   const getTrips = () => {
-    fetchTripsByID(userID).then((data) =>
-      setTripsPast(filterData.getPastTrips(data.requestedTrips))
-    );
+    fetchTripsByID(userID)
+      .then((data) => {
+        setTripsPast(filterData.getPastTrips(data.requestedTrips));
+        setIsLoading(false);
+      })
+      .catch((error) => setError(error.message));
   };
 
   useEffect(() => {
@@ -26,8 +29,13 @@ export const PastTrips = ({ userID }) => {
 
   return (
     <section className="pastTripsContainer">
-      <h2>Past Trips</h2>
-      <section className="pastTripsCardWrapper">{pastTripCards}</section>
+      {isLoading && !error && <p>"We are getting your trips...</p>}
+      {!isLoading && !error && (
+        <React.Fragment>
+          <h2>Past Trips</h2>
+          <section className="pastTripsCardWrapper">{pastTripCards}</section>
+        </React.Fragment>
+      )}
     </section>
   );
 };
