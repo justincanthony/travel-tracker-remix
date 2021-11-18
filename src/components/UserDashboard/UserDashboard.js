@@ -9,20 +9,24 @@ import { fetchTravelerByID } from '../../apiCalls';
 
 export const UserDashboard = ({ userID, type }) => {
   const [traveler, setTraveler] = useState({});
-  const [loading, isLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     const getTravelerByID = (userID) => {
-      fetchTravelerByID(userID).then((data) => {
-        setTraveler(data);
-      });
+      fetchTravelerByID(userID)
+        .then((data) => {
+          setTraveler(data);
+          setIsLoading(false);
+        })
+        .catch((error) => setError(error));
     };
     getTravelerByID(userID);
   }, [userID]);
 
   return (
     <React.Fragment>
-      <DashboardNavbar userID={userID} />
+      <DashboardNavbar userID={userID} traveler={traveler} />
       {type === 'pendingTrips' && <PendingTrips userID={userID} />}
       {type === 'destinations' && <Destinations userID={userID} />}
       {type === 'pastTrips' && <PastTrips userID={userID} />}
