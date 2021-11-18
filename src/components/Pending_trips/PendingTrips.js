@@ -17,18 +17,17 @@ export const PendingTrips = ({ userID }) => {
       .catch((error) => setError(error.message));
   };
 
-  const getTrips = () => {
-    fetchTripsByID(userID)
-      .then((data) => {
-        setTripsPending(filterData.getPendingTrips(data.requestedTrips));
-        setIsLoading(false);
-      })
-      .catch((error) => setError(error.message));
-  };
-
   useEffect(() => {
+    const getTrips = () => {
+      fetchTripsByID(userID)
+        .then((data) => {
+          setTripsPending(filterData.getPendingTrips(data.requestedTrips));
+          setIsLoading(false);
+        })
+        .catch((error) => setError(error.message));
+    };
     getTrips();
-  }, []);
+  }, [userID]);
 
   const tripsPendingCards = tripsPending.map((trip) => {
     return (
