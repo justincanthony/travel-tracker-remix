@@ -33,14 +33,14 @@ const DestinationCard = ({ userID, destinationObj, sendNewTrip }) => {
               <article className="modalContainer">
                 <FlightTakeoffIcon />
                 <h3 className="modalTitle">Book Your Trip to {destination}</h3>
-                <p className="modalText">
-                  Please fill out the following information.
-                </p>
+
                 <NewTripForm
                   destinationID={id}
                   destination={destination}
                   userID={userID}
                   sendNewTrip={sendNewTrip}
+                  lodgingCost={estimatedLodgingCostPerDay}
+                  flightCost={estimatedFlightCostPerPerson}
                   close={close}
                 />
                 <button className="modalBackButton" onClick={close}>
@@ -56,10 +56,6 @@ const DestinationCard = ({ userID, destinationObj, sendNewTrip }) => {
 };
 
 export default DestinationCard;
-
-// *************IDEAS******************
-//Add a cancel trip booking optio.
-//import toast for error handling
 
 // ********Example Trip Data***********
 // {
