@@ -96,7 +96,7 @@ export const DashboardNavbar = ({ userID, traveler }) => {
               </li>
               <br />
               <li>
-                <Badge badgeContent={tripsPending.length} color="action">
+                <Badge badgeContent={tripsPending.length} color="primary">
                   <Link className="links" to={`/pending_trips/${userID}`}>
                     Pending Trips
                   </Link>
