@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './DashboardNavbar.css';
 import { Link, Redirect } from 'react-router-dom';
+import { fetchTripsByID } from '../../apiCalls';
+import { filterData } from '../../utils';
 import PersonIcon from '@mui/icons-material/Person';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import Badge from '@mui/material/Badge';
 
 export const DashboardNavbar = ({ userID, traveler }) => {
   const { name } = traveler;
 
+  const [tripsPending, setTripsPending] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [error, setError] = useState('');
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -28,6 +33,17 @@ export const DashboardNavbar = ({ userID, traveler }) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  useEffect(() => {
+    const getTrips = () => {
+      fetchTripsByID(userID)
+        .then((data) => {
+          setTripsPending(filterData.getPendingTrips(data.requestedTrips));
+        })
+        .catch((error) => setError(error.message));
+    };
+    getTrips();
+  }, [userID]);
 
   return (
     <React.Fragment>
@@ -80,9 +96,11 @@ export const DashboardNavbar = ({ userID, traveler }) => {
               </li>
               <br />
               <li>
-                <Link className="links" to={`/pending_trips/${userID}`}>
-                  Pending Trips
-                </Link>
+                <Badge badgeContent={tripsPending.length} color="action">
+                  <Link className="links" to={`/pending_trips/${userID}`}>
+                    Pending Trips
+                  </Link>
+                </Badge>
               </li>
               <br />
               <li>
