@@ -58,7 +58,9 @@ export const DashboardNavbar = ({ userID, traveler }) => {
                   'aria-labelledby': 'basic-button',
                 }}
               >
-                <MenuItem onClick={handleProfile}>Profile</MenuItem>
+                <MenuItem onClick={handleProfile}>
+                  <Link to={`/user_dashboard/${userID}`}>Profile</Link>
+                </MenuItem>
                 <MenuItem onClick={handleLogout}>Logout</MenuItem>
               </Menu>
             </div>
