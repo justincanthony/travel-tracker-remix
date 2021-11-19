@@ -28,7 +28,6 @@ export const Destinations = ({ userID }) => {
       bookTrip(newTrip)
         .then((data) => {
           setNewTrip(data.newTrip);
-          console.log(newTrip);
         })
 
         .catch((error) => setError(error.message)),

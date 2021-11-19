@@ -55,7 +55,6 @@ export const PendingTrips = ({ userID }) => {
       {!isLoading && !error && tripsPendingCards.length > 0 && (
         <React.Fragment>
           <h2>Pending Trips</h2>
-          {console.log(tripsPendingCards)}
           <div className="pendingTripsWrapper">{tripsPendingCards}</div>
         </React.Fragment>
       )}
