@@ -16,6 +16,16 @@ const App = () => {
           path="/user_dashboard/:userID"
           render={({ match }) => {
             const { params } = match;
+            return (
+              <UserDashboard userID={params.userID} type="userDashboard" />
+            );
+          }}
+        />
+        <Route
+          exact
+          path="/pending_trips/:userID"
+          render={({ match }) => {
+            const { params } = match;
             return <UserDashboard userID={params.userID} type="pendingTrips" />;
           }}
         />
