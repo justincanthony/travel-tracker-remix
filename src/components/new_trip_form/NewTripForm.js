@@ -10,6 +10,8 @@ const NewTripForm = ({
   sendNewTrip,
   destination,
   close,
+  lodgingCost,
+  flightCost,
 }) => {
   const [travelers, setTravelers] = useState('');
   const [duration, setDuration] = useState('');
@@ -74,6 +76,10 @@ const NewTripForm = ({
             required
             onChange={(e) => setDuration(e.target.value)}
           />
+          <p>
+            Total Trip Cost: $
+            {lodgingCost * duration * travelers + flightCost * travelers}
+          </p>
           <Button
             variant="contained"
             className="submit"
