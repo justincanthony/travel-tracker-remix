@@ -45,4 +45,14 @@ export const filterData = {
       );
     }
   },
+  getUpcomingTrip(data) {
+    const approvedTrips = this.getApprovedTrips(data);
+    if (approvedTrips.length < 1) {
+      throw new Error('You do not have any upcoming trips.');
+    } else {
+      return approvedTrips
+        .filter((trip) => dayjs(trip.date).isAfter(dayjs()) === true)
+        .sort((a, b) => new Date(a.date) - new Date(b.date))[0];
+    }
+  },
 };
