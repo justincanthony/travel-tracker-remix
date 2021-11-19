@@ -41,6 +41,10 @@
 	margin: 5px;
 }
 
+.bookMeButton {
+	height: 25px;
+}
+
 /* Modal Formatting & Style */
 
 .modalContainer {
@@ -51,10 +55,11 @@
 }
 
 .modalBackButton {
-	border-radius: 8px;
-	border: none;
+	/* border-radius: 8px;
+	border: none; */
+	width: 200px;
 	margin-bottom: 10px;
-	height: 25px;
+	height: 30px;
 }
 
 .modalBackButton:hover {
