@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
 import './TripCard.css';
+import { Button } from '@mui/material';
 
 export const TripCard = ({ trip, cancelTrip }) => {
   const { id, place, travelers, date, duration } = trip;
@@ -30,13 +31,15 @@ export const TripCard = ({ trip, cancelTrip }) => {
             estimatedFlightCostPerPerson * travelers}
         </p>
         {dayjs(date).isAfter(dayjs()) && (
-          <button
-            className="submit"
+          <Button
+            variant="contained"
+            color="inherit"
+            className="cancelSubmit"
             type="submit"
             onClick={() => handleChange(id)}
           >
             Cancel Trip
-          </button>
+          </Button>
         )}
       </section>
     </article>

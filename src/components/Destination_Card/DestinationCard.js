@@ -2,6 +2,7 @@ import MicroModal from 'react-micro-modal';
 import NewTripForm from '../New_Trip_Form/NewTripForm';
 import './DestinationCard.css';
 import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
+import { Button } from '@mui/material';
 
 const DestinationCard = ({ userID, destinationObj, sendNewTrip }) => {
   const {
@@ -24,7 +25,9 @@ const DestinationCard = ({ userID, destinationObj, sendNewTrip }) => {
         <MicroModal
           trigger={(open) => (
             <div onClick={open}>
-              <button>Book Me!</button>
+              <Button className="bookMeButton" variant="outlined">
+                Book Me!
+              </Button>
             </div>
           )}
         >
@@ -43,9 +46,14 @@ const DestinationCard = ({ userID, destinationObj, sendNewTrip }) => {
                   flightCost={estimatedFlightCostPerPerson}
                   close={close}
                 />
-                <button className="modalBackButton" onClick={close}>
+                <br />
+                <Button
+                  variant="contained"
+                  className="modalBackButton"
+                  onClick={close}
+                >
                   Go Back
-                </button>
+                </Button>
               </article>
             );
           }}
