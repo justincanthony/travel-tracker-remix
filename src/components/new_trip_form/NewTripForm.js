@@ -49,7 +49,11 @@ const NewTripForm = ({
           <p className="modalText">
             Please fill out the following information.
           </p>
+          <label for="date" name="date">
+            Date
+          </label>
           <input
+            id="date"
             className="date"
             type="date"
             placeholder="Date"
@@ -58,7 +62,11 @@ const NewTripForm = ({
             required
             onChange={(e) => setDate(e.target.value)}
           />
+          <label for="travelers" name="travelers">
+            Number of Travelers
+          </label>
           <input
+            id="travelers"
             className="travelers"
             type="number"
             placeholder="Number of Travelers"
@@ -67,7 +75,11 @@ const NewTripForm = ({
             required
             onChange={(e) => setTravelers(e.target.value)}
           />
+          <label for="duration" name="duration">
+            Duration
+          </label>
           <input
+            id="duration"
             className="duration"
             type="number"
             placeholder="Number of Days"
