@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import DestinationCard from '../Destination_Card/DestinationCard';
 import './Destinations.css';
 import { bookTrip } from '../../apiCalls';
+import { DashboardNavbar } from '../Dashboard_Navbar/DashboardNavbar';
 import { ErrorMessage } from '../Error_Message/ErrorMessage';
 
 export const Destinations = ({ userID }) => {
@@ -54,6 +55,8 @@ export const Destinations = ({ userID }) => {
 
   return (
     <React.Fragment>
+      <DashboardNavbar userID={userID} />
+
       {isLoading && <p>Loading...</p>}
       {error && <ErrorMessage message={error} />}
       {!isLoading && (
