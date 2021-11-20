@@ -3,6 +3,7 @@ import './PendingTrips.css';
 import { filterData } from '../../utils';
 import { fetchTripsByID, deleteTrip } from '../../apiCalls';
 import { ErrorMessage } from '../Error_Message/ErrorMessage';
+import { DashboardNavbar } from '../Dashboard_Navbar/DashboardNavbar';
 import { TripCard } from '../Trip_Card/TripCard';
 
 export const PendingTrips = ({ userID }) => {
@@ -50,27 +51,31 @@ export const PendingTrips = ({ userID }) => {
   });
 
   return (
-    <section className="pendingTripsContainer">
-      {isLoading && !error && <p>"We are getting your trips...</p>}
-      {!isLoading && !error && tripsPendingCards.length > 0 && (
-        <React.Fragment>
-          <h2>Pending Trips</h2>
-          <div className="pendingTripsWrapper">{tripsPendingCards}</div>
-        </React.Fragment>
-      )}
-      {!isLoading && !error && tripsPendingCards.length < 1 && (
-        <React.Fragment>
-          <h2>Pending Trips</h2>
-          <div className="pendingTripsWrapper">
-            <ErrorMessage
-              message={
-                'Looks like you do not have any upcoming trips. Please visit destinations to book your next adventure!'
-              }
-            />
-          </div>
-        </React.Fragment>
-      )}
-      {error && <ErrorMessage message={error} />}
-    </section>
+    <React.Fragment>
+      <DashboardNavbar userID={userID} />
+
+      <section className="pendingTripsContainer">
+        {isLoading && !error && <p>"We are getting your trips...</p>}
+        {!isLoading && !error && tripsPendingCards.length > 0 && (
+          <React.Fragment>
+            <h2>Pending Trips</h2>
+            <div className="pendingTripsWrapper">{tripsPendingCards}</div>
+          </React.Fragment>
+        )}
+        {!isLoading && !error && tripsPendingCards.length < 1 && (
+          <React.Fragment>
+            <h2>Pending Trips</h2>
+            <div className="pendingTripsWrapper">
+              <ErrorMessage
+                message={
+                  'Looks like you do not have any upcoming trips. Please visit destinations to book your next adventure!'
+                }
+              />
+            </div>
+          </React.Fragment>
+        )}
+        {error && <ErrorMessage message={error} />}
+      </section>
+    </React.Fragment>
   );
 };
