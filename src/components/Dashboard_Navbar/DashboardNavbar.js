@@ -3,18 +3,20 @@ import './DashboardNavbar.css';
 import { Link, Redirect } from 'react-router-dom';
 import { fetchTripsByID } from '../../apiCalls';
 import { filterData } from '../../utils';
+import { fetchTravelerByID } from '../../apiCalls';
 import PersonIcon from '@mui/icons-material/Person';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Badge from '@mui/material/Badge';
 
-export const DashboardNavbar = ({ userID, traveler }) => {
-  const { name } = traveler;
-
+export const DashboardNavbar = ({ userID }) => {
+  const [traveler, setTraveler] = useState({});
   const [tripsPending, setTripsPending] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
+
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -33,6 +35,18 @@ export const DashboardNavbar = ({ userID, traveler }) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  useEffect(() => {
+    const getTravelerByID = (userID) => {
+      fetchTravelerByID(userID)
+        .then((data) => {
+          setTraveler(data);
+          setIsLoading(false);
+        })
+        .catch((error) => setError(error));
+    };
+    getTravelerByID(userID);
+  }, [userID]);
 
   useEffect(() => {
     const getTrips = () => {
@@ -63,7 +77,7 @@ export const DashboardNavbar = ({ userID, traveler }) => {
               >
                 <PersonIcon />
                 <br />
-                <p className="userName">{name}</p>
+                <p className="userName">{traveler.name}</p>
               </Button>
               <Menu
                 id="basic-menu"
