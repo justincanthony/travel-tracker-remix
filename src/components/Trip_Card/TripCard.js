@@ -17,7 +17,7 @@ export const TripCard = ({ trip, cancelTrip }) => {
 
   return (
     <article className="tripCard">
-      <h3 className="destinationTitle">{destination}</h3>
+      <h3 className="destinationPendingTitle">{destination}</h3>
       <div className="destinationImageWrapper">
         <img className="destinationImage" src={image} alt={destination} />
       </div>
