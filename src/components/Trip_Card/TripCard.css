@@ -11,8 +11,9 @@
 	opacity: 0.75;
 }
 
-.destinationTitle {
-	margin-bottom: 15px;
+.destinationPendingTitle {
+	margin: 0;
+	height: 30px
 }
 .destinationImageWrapper {
 	width: 250px;
@@ -32,4 +33,5 @@
 
 .cancelSubmit {
 	height: 25px;
+	margin-bottom: 10px;
 }
