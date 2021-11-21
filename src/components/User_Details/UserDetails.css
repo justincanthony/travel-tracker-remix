@@ -5,3 +5,11 @@
 	align-items: center;
 	flex-wrap: wrap;
 }
+
+.upcomingTripWrapper {
+	display: flex;
+}
+
+.upcomingTripImageWrapper {
+	
+}
