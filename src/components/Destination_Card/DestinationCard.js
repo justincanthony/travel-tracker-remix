@@ -1,6 +1,8 @@
 import MicroModal from 'react-micro-modal';
 import NewTripForm from '../New_Trip_Form/NewTripForm';
 import './DestinationCard.css';
+import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
+import { Button } from '@mui/material';
 
 const DestinationCard = ({ userID, destinationObj, sendNewTrip }) => {
   const {
@@ -23,26 +25,35 @@ const DestinationCard = ({ userID, destinationObj, sendNewTrip }) => {
         <MicroModal
           trigger={(open) => (
             <div onClick={open}>
-              <button>Book Me!</button>
+              <Button className="bookMeButton" variant="outlined">
+                Book Me!
+              </Button>
             </div>
           )}
         >
           {(close) => {
             return (
               <article className="modalContainer">
+                <FlightTakeoffIcon />
                 <h3 className="modalTitle">Book Your Trip to {destination}</h3>
-                <p className="modalText">
-                  Please fill out the following information.
-                </p>
+
                 <NewTripForm
                   destinationID={id}
                   destination={destination}
                   userID={userID}
                   sendNewTrip={sendNewTrip}
+                  lodgingCost={estimatedLodgingCostPerDay}
+                  flightCost={estimatedFlightCostPerPerson}
+                  close={close}
                 />
-                <button className="modalBackButton" onClick={close}>
+                <br />
+                <Button
+                  variant="contained"
+                  className="modalBackButton"
+                  onClick={close}
+                >
                   Go Back
-                </button>
+                </Button>
               </article>
             );
           }}
@@ -53,10 +64,6 @@ const DestinationCard = ({ userID, destinationObj, sendNewTrip }) => {
 };
 
 export default DestinationCard;
-
-// *************IDEAS******************
-//Add a cancel trip booking optio.
-//import toast for error handling
 
 // ********Example Trip Data***********
 // {

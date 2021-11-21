@@ -5,12 +5,14 @@ import { toast } from 'react-toastify';
 import DestinationCard from '../Destination_Card/DestinationCard';
 import './Destinations.css';
 import { bookTrip } from '../../apiCalls';
+import { DashboardNavbar } from '../Dashboard_Navbar/DashboardNavbar';
 import { ErrorMessage } from '../Error_Message/ErrorMessage';
 
 export const Destinations = ({ userID }) => {
   const [destinations, setDestinations] = useState([]);
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(true);
+  const [newTrip, setNewTrip] = useState({});
 
   const getDestinations = () => {
     fetchData()
@@ -22,13 +24,17 @@ export const Destinations = ({ userID }) => {
   };
 
   const sendNewTrip = (newTrip, destination) => {
+    setError('');
     toast.promise(
       bookTrip(newTrip)
-        .then((data) => console.log(data.message))
+        .then((data) => {
+          setNewTrip(data.newTrip);
+        })
+
         .catch((error) => setError(error.message)),
       {
         pending: 'Please wait while we make your request',
-        success: `Your trip request to ${destination} has been made`,
+        success: `Your trip request for ${newTrip.travelers} travelers to ${destination} on ${newTrip.date} for ${newTrip.duration} days has been made`,
         error: 'Whoops! Something went wrong. Please try again',
       }
     );
@@ -49,6 +55,8 @@ export const Destinations = ({ userID }) => {
 
   return (
     <React.Fragment>
+      <DashboardNavbar userID={userID} />
+
       {isLoading && <p>Loading...</p>}
       {error && <ErrorMessage message={error} />}
       {!isLoading && (

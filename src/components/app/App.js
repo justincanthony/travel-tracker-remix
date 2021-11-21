@@ -1,8 +1,12 @@
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import { Login } from '../Login/Login';
+import { PendingTrips } from '../Pending_trips/PendingTrips';
 import { ToastContainer } from 'react-toastify';
 import { UserDashboard } from '../UserDashboard/UserDashboard';
+import React from 'react';
+import Destinations from '../Destinations/Destinations';
+import { PastTrips } from '../Past_Trips/PastTrips';
 
 const App = () => {
   return (
@@ -16,7 +20,9 @@ const App = () => {
           path="/user_dashboard/:userID"
           render={({ match }) => {
             const { params } = match;
-            return <UserDashboard userID={params.userID} type="pendingTrips" />;
+            return (
+              <UserDashboard userID={params.userID} type="userDashboard" />
+            );
           }}
         />
         <Route
@@ -24,7 +30,15 @@ const App = () => {
           path="/destinations/:userID"
           render={({ match }) => {
             const { params } = match;
-            return <UserDashboard userID={params.userID} type="destinations" />;
+            return <Destinations userID={params.userID} />;
+          }}
+        />
+        <Route
+          exact
+          path="/pending_trips/:userID"
+          render={({ match }) => {
+            const { params } = match;
+            return <PendingTrips userID={params.userID} />;
           }}
         />
         <Route
@@ -32,7 +46,7 @@ const App = () => {
           path="/past_trips/:userID"
           render={({ match }) => {
             const { params } = match;
-            return <UserDashboard userID={params.userID} type="pastTrips" />;
+            return <PastTrips userID={params.userID} />;
           }}
         />
         {/* <Route render={() => <ErrorPage/>}/> */}

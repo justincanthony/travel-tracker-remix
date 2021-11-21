@@ -11,6 +11,9 @@
 	opacity: 0.75;
 }
 
+.destinationTitle {
+	margin-bottom: 15px;
+}
 .destinationImageWrapper {
 	width: 250px;
 	height: 120px;
@@ -25,4 +28,8 @@
 
 .tripDetails p {
 	margin: 5px;
+}
+
+.cancelSubmit {
+	height: 25px;
 }

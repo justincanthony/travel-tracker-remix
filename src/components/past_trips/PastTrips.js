@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { fetchTripsByID } from '../../apiCalls';
 import { filterData } from '../../utils';
 import { TripCard } from '../Trip_Card/TripCard';
+import { DashboardNavbar } from '../Dashboard_Navbar/DashboardNavbar';
 import './PastTrips.css';
 
 export const PastTrips = ({ userID }) => {
@@ -27,14 +28,20 @@ export const PastTrips = ({ userID }) => {
   });
 
   return (
-    <section className="pastTripsContainer">
-      {isLoading && !error && <p>"We are getting your trips...</p>}
-      {!isLoading && !error && (
-        <React.Fragment>
-          <h2>Past Trips</h2>
-          <section className="pastTripsCardWrapper">{pastTripCards}</section>
-        </React.Fragment>
-      )}
-    </section>
+    <React.Fragment>
+      <DashboardNavbar userID={userID} />
+      <section className="pastTripsContainer">
+        {isLoading && !error && <p>"We are getting your trips...</p>}
+        {!isLoading && !error && tripsPast.length < 1 && (
+          <p>You do not have any previous trips!</p>
+        )}
+        {!isLoading && !error && tripsPast.length > 0 && (
+          <React.Fragment>
+            <h2>Past Trips</h2>
+            <section className="pastTripsCardWrapper">{pastTripCards}</section>
+          </React.Fragment>
+        )}
+      </section>
+    </React.Fragment>
   );
 };

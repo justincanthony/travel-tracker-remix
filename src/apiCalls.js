@@ -78,3 +78,18 @@ export const deleteTrip = async (id) => {
     return response.json();
   }
 };
+
+// API Call for getting weather
+
+// export const getWeather = async (place) => {
+//   const response = await fetch(
+//     `https://api.openweathermap.org/data/2.5/weather?q=${place}&units=imperial&APPID=7f75641c5838f57984f3c38dd4dfa6f8`
+//   );
+//   if (response.cod >= 400) {
+//     return response.json().then((res) => {
+//       throw new Error(res.message);
+//     });
+//   } else {
+//     return response.json();
+//   }
+// };
