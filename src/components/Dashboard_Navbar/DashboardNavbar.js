@@ -9,6 +9,10 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Badge from '@mui/material/Badge';
+import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import PendingIcon from '@mui/icons-material/Pending';
+import HistoryIcon from '@mui/icons-material/History';
 
 export const DashboardNavbar = ({ userID }) => {
   const [traveler, setTraveler] = useState({});
@@ -67,27 +71,27 @@ export const DashboardNavbar = ({ userID }) => {
             <ul className="linksList">
               <li>
                 <Link className="links" to={`/user_dashboard/${userID}`}>
-                  Dashboard
+                  <DashboardIcon /> Dashboard
                 </Link>
               </li>
               <br />
               <li>
                 <Link className="links" to={`/destinations/${userID}`}>
-                  Destinations
+                  <TravelExploreIcon /> Destinations
                 </Link>
               </li>
               <br />
               <li>
                 <Badge badgeContent={tripsPending.length} color="primary">
                   <Link className="links" to={`/pending_trips/${userID}`}>
-                    Pending Trips
+                    <PendingIcon /> Pending Trips
                   </Link>
                 </Badge>
               </li>
               <br />
               <li>
                 <Link className="links" to={`/past_trips/${userID}`}>
-                  Past Trips
+                  <HistoryIcon /> Past Trips
                 </Link>
               </li>
               <li>
@@ -98,9 +102,9 @@ export const DashboardNavbar = ({ userID }) => {
                   aria-expanded={open ? 'true' : undefined}
                   onClick={handleClick}
                 >
+                  {' '}
                   <PersonIcon />
-                  <br />
-                  <p className="userName">{traveler.name}</p>
+                  {traveler.name}
                 </Button>
                 <Menu
                   id="basic-menu"
