@@ -1,3 +1,5 @@
+import { toast } from 'react-toastify';
+
 export const fetchData = async () => {
   const response = await fetch(
     'http://travel-tracker-remix-api.herokuapp.com/api/v1/destinations'
@@ -10,8 +12,6 @@ export const fetchData = async () => {
     return response.json();
   }
 };
-
-//travel-tracker-remix-api.herokuapp.com/
 
 export const fetchTripsByID = async (id) => {
   const response = await fetch(
@@ -72,11 +72,15 @@ export const bookTrip = async (newTrip) => {
   }
 };
 
-export const deleteTrip = async (id) => {
-  const response = await fetch(
-    `http://travel-tracker-remix-api.herokuapp.com/api/v1/trips/${id}`,
-    {
+export const deleteTrip = async (id, destination) => {
+  const response = await toast.promise(
+    fetch(`http://travel-tracker-remix-api.herokuapp.com/api/v1/trips/${id}`, {
       method: 'DELETE',
+    }),
+    {
+      pending: 'Promise is pending',
+      success: `Your trip request to ${destination} has been cancelled`,
+      error: 'Promise rejected 🤯',
     }
   );
   if (response.status >= 400) {
@@ -87,18 +91,3 @@ export const deleteTrip = async (id) => {
     return response.json();
   }
 };
-
-// API Call for getting weather
-
-// export const getWeather = async (place) => {
-//   const response = await fetch(
-//     `https://api.openweathermap.org/data/2.5/weather?q=${place}&units=imperial&APPID=7f75641c5838f57984f3c38dd4dfa6f8`
-//   );
-//   if (response.cod >= 400) {
-//     return response.json().then((res) => {
-//       throw new Error(res.message);
-//     });
-//   } else {
-//     return response.json();
-//   }
-// };
