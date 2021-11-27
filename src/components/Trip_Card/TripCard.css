@@ -11,19 +11,9 @@
 	opacity: 0.75;
 }
 
-.destinationTitle {
-	margin-bottom: 15px;
-}
-.destinationImageWrapper {
-	width: 250px;
-	height: 120px;
-	padding: 5px;
-}
-
-.destinationImage {
-	width: 250px;
-	height: 100%;
-	object-fit: cover;
+.destinationPendingTitle {
+	margin: 0;
+	height: 40px;
 }
 
 .tripDetails p {
@@ -32,4 +22,5 @@
 
 .cancelSubmit {
 	height: 25px;
+	margin-bottom: 10px;
 }

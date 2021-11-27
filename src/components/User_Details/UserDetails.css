@@ -8,6 +8,8 @@
 
 .upcomingTripWrapper {
 	display: flex;
+	/* flex-direction: column; */
+
 }
 
 .upcomingTripImageWrapper {

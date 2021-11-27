@@ -1,5 +1,6 @@
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
+import Navbar from '../Navbar/Navbar';
 import { Login } from '../Login/Login';
 import { PendingTrips } from '../Pending_trips/PendingTrips';
 import { ToastContainer } from 'react-toastify';
@@ -12,7 +13,7 @@ const App = () => {
   return (
     <div className="App">
       <ToastContainer />
-      {/* <Navbar /> */}
+      <Navbar />
       <Switch>
         <Route exact path="/" render={() => <Login />} />
         <Route
