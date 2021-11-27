@@ -11,8 +11,8 @@ export const TripCard = ({ trip, cancelTrip }) => {
     image,
   } = place;
 
-  const handleChange = (id) => {
-    cancelTrip(id);
+  const handleChange = (id, destination) => {
+    cancelTrip(id, destination);
   };
 
   return (
@@ -36,7 +36,7 @@ export const TripCard = ({ trip, cancelTrip }) => {
             color="inherit"
             className="cancelSubmit"
             type="submit"
-            onClick={() => handleChange(id)}
+            onClick={() => handleChange(id, destination)}
           >
             Cancel Trip
           </Button>
