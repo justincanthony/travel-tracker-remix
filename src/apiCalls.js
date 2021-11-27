@@ -1,5 +1,7 @@
 export const fetchData = async () => {
-  const response = await fetch('http://localhost:3001/api/v1/destinations');
+  const response = await fetch(
+    'http://travel-tracker-remix-api.herokuapp.com/api/v1/destinations'
+  );
   if (response.status >= 400) {
     return response.json().then((res) => {
       throw new Error(res.message);
@@ -9,8 +11,12 @@ export const fetchData = async () => {
   }
 };
 
+//travel-tracker-remix-api.herokuapp.com/
+
 export const fetchTripsByID = async (id) => {
-  const response = await fetch(`http://localhost:3001/api/v1/trips/${id}`);
+  const response = await fetch(
+    `http://travel-tracker-remix-api.herokuapp.com/api/v1/trips/${id}`
+  );
   if (response.status >= 400) {
     return response.json().then((res) => {
       throw new Error(res.message);
@@ -22,7 +28,7 @@ export const fetchTripsByID = async (id) => {
 
 export const fetchTraveler = async (username, password) => {
   const response = await fetch(
-    `http://localhost:3001/api/v1/travelers/${username}/${password}`
+    `http://travel-tracker-remix-api.herokuapp.com/api/v1/travelers/${username}/${password}`
   );
   if (response.status >= 400) {
     return response.json().then((res) => {
@@ -35,7 +41,7 @@ export const fetchTraveler = async (username, password) => {
 
 export const fetchTravelerByID = async (userID) => {
   const response = await fetch(
-    `http://localhost:3001/api/v1/travelers/${userID}`
+    `http://travel-tracker-remix-api.herokuapp.com/api/v1/travelers/${userID}`
   );
   if (response.status >= 400) {
     return response.json().then((res) => {
@@ -54,7 +60,7 @@ export const bookTrip = async (newTrip) => {
   };
 
   const response = await fetch(
-    'http://localhost:3001/api/v1/trips',
+    'http://travel-tracker-remix-api.herokuapp.com/api/v1/trips',
     requestOptions
   );
   if (response.status >= 400) {
@@ -67,9 +73,12 @@ export const bookTrip = async (newTrip) => {
 };
 
 export const deleteTrip = async (id) => {
-  const response = await fetch(`http://localhost:3001/api/v1/trips/${id}`, {
-    method: 'DELETE',
-  });
+  const response = await fetch(
+    `http://travel-tracker-remix-api.herokuapp.com/api/v1/trips/${id}`,
+    {
+      method: 'DELETE',
+    }
+  );
   if (response.status >= 400) {
     return response.json().then((res) => {
       throw new Error(res.message);
