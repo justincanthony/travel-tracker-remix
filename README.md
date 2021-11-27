@@ -31,9 +31,9 @@ https://github.com/justincanthony/travel-tracker-remix-api -->
 
 <!-- PROJECT Details -->
 
-  <h1 align="center">FanBase</h1>
+  <h1 align="center">Travel Tracker Remix</h1>
 
-  <p align="center">Connecting Fans to Bands
+  <p align="center">Your Destination Station
     <br />
     <a href=https://github.com/justincanthony/travel-tracker-remix><strong>Explore the docs »</strong></a>
     <br />
