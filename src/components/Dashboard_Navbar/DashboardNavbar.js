@@ -62,39 +62,7 @@ export const DashboardNavbar = ({ userID }) => {
   return (
     <React.Fragment>
       {isLoggedIn ? (
-        <header className="dashboardNavbar">
-          <div className="titleMenuWrapper">
-            <div className="titleContainer">
-              <h1 className="appTitle">Travel Tracker v2</h1>
-            </div>
-            <div className="userIconWrapper">
-              <Button
-                id="basic-button"
-                aria-controls="basic-menu"
-                aria-haspopup="true"
-                aria-expanded={open ? 'true' : undefined}
-                onClick={handleClick}
-              >
-                <PersonIcon />
-                <br />
-                <p className="userName">{traveler.name}</p>
-              </Button>
-              <Menu
-                id="basic-menu"
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-                MenuListProps={{
-                  'aria-labelledby': 'basic-button',
-                }}
-              >
-                <MenuItem onClick={handleProfile}>
-                  <Link to={`/user_dashboard/${userID}`}>Profile</Link>
-                </MenuItem>
-                <MenuItem onClick={handleLogout}>Logout</MenuItem>
-              </Menu>
-            </div>
-          </div>
+        <nav className="dashboardNavbar">
           <div className="linksContainer">
             <ul className="linksList">
               <li>
@@ -122,9 +90,36 @@ export const DashboardNavbar = ({ userID }) => {
                   Past Trips
                 </Link>
               </li>
+              <li>
+                <Button
+                  id="basic-button"
+                  aria-controls="basic-menu"
+                  aria-haspopup="true"
+                  aria-expanded={open ? 'true' : undefined}
+                  onClick={handleClick}
+                >
+                  <PersonIcon />
+                  <br />
+                  <p className="userName">{traveler.name}</p>
+                </Button>
+                <Menu
+                  id="basic-menu"
+                  anchorEl={anchorEl}
+                  open={open}
+                  onClose={handleClose}
+                  MenuListProps={{
+                    'aria-labelledby': 'basic-button',
+                  }}
+                >
+                  <MenuItem onClick={handleProfile}>
+                    <Link to={`/user_dashboard/${userID}`}>Profile</Link>
+                  </MenuItem>
+                  <MenuItem onClick={handleLogout}>Logout</MenuItem>
+                </Menu>
+              </li>
             </ul>
           </div>
-        </header>
+        </nav>
       ) : (
         <Redirect to="/" />
       )}
