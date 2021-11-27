@@ -1,9 +1,12 @@
 .header {
-	background-color: rgb(102, 186, 239);
+	margin: 0;
 }
 
 .appTitle {
+	background-color: rgb(102, 186, 239);
 	text-align: center;
+	margin: 0;
+	padding: 10px;
 }
 
 .linksList {
@@ -19,4 +22,5 @@
 
 .links {
 	text-decoration: none;
+	color:black;
 }
