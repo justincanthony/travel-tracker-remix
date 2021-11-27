@@ -53,7 +53,6 @@ export const PendingTrips = ({ userID }) => {
   return (
     <React.Fragment>
       <DashboardNavbar userID={userID} />
-
       <section className="pendingTripsContainer">
         {isLoading && !error && <p>"We are getting your trips...</p>}
         {!isLoading && !error && tripsPendingCards.length > 0 && (
