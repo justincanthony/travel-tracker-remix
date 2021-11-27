@@ -68,3 +68,47 @@ https://github.com/justincanthony/travel-tracker-remix-api -->
   </ol>
 </details>
 
+<!-- ABOUT THE PROJECT -->
+
+### About the Project
+<!-- Describe what the over all scope and learninging goal of the project is, and what set-up the challenge was framed in-->
+
+
+### Built With
+
+
+[![React Hooks][react-hooks-shield]][react-hooks-url]
+[![React Router][react-router-shield]][react-router-url]
+[![NPM][npm-sheild]][npm-url]
+<!-- [![Cypress Sheild][cypress-sheild]][cypress-url] -->
+[![Visual Studio Code][visual-studio-code-sheild]][visual-studio-code-url]
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+* NPM
+* React Router 5
+* Dayjs
+
+
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/justincanthony/travel-tracker-remix.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+
+
+## USAGE                       
+<!--DESCRIBE WHAT THE USAGE EXPERIENCE IS LIKE/BUILT ON -->
+
+                          
