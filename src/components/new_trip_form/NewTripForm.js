@@ -112,7 +112,3 @@ const NewTripForm = ({
 };
 
 export default NewTripForm;
-
-// ********* NOTES *************
-// decide how to handle group size larger than 10
-// add toast alert for succesful submission/POST
