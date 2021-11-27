@@ -20,7 +20,6 @@ export const PendingTrips = ({ userID }) => {
       fetchTripsByID(userID)
         .then((data) => {
           setTripsPending(filterData.getPendingTrips(data.requestedTrips));
-          console.log(data.requestedTrips);
           setIsLoading(false);
         })
         .catch((error) => setError(error.message));
