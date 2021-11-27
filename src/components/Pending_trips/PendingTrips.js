@@ -12,10 +12,8 @@ export const PendingTrips = ({ userID }) => {
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(true);
 
-  const cancelTrip = (id) => {
-    deleteTrip(id)
-      .then((data) => setNotification(data.message))
-      .catch((error) => setError(error.message));
+  const cancelTrip = (id, destination) => {
+    console.log(destination);
     const getTrips = () => {
       fetchTripsByID(userID)
         .then((data) => {
@@ -24,7 +22,12 @@ export const PendingTrips = ({ userID }) => {
         })
         .catch((error) => setError(error.message));
     };
-    getTrips();
+    deleteTrip(id, destination)
+      .then((data) => {
+        setNotification(data.message);
+        getTrips();
+      })
+      .catch((error) => setError(error.message));
   };
 
   useEffect(() => {
@@ -37,7 +40,7 @@ export const PendingTrips = ({ userID }) => {
         .catch((error) => setError(error.message));
     };
     getTrips();
-  }, [userID, tripsPending]);
+  }, [userID]);
 
   const tripsPendingCards = tripsPending.map((trip) => {
     return (
