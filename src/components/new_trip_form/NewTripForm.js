@@ -58,7 +58,7 @@ const NewTripForm = ({
             type="date"
             placeholder="Date"
             value={date}
-            min={Date.now()}
+            min={dayjs().format('YYYY-MM-DD')}
             required
             onChange={(e) => setDate(e.target.value)}
           />
@@ -71,7 +71,7 @@ const NewTripForm = ({
             type="number"
             placeholder="Number of Travelers"
             value={travelers}
-            min="1"
+            min={1}
             required
             onChange={(e) => setTravelers(e.target.value)}
           />
@@ -83,7 +83,7 @@ const NewTripForm = ({
             className="duration"
             type="number"
             placeholder="Number of Days"
-            min="1"
+            min={1}
             value={duration}
             required
             onChange={(e) => setDuration(e.target.value)}
