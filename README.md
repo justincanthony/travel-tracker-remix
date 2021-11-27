@@ -111,4 +111,11 @@ To get a local copy up and running follow these simple steps.
 ## USAGE                       
 <!--DESCRIBE WHAT THE USAGE EXPERIENCE IS LIKE/BUILT ON -->
 
-                          
+
+Screen Size EXAMPLES 
+
+Mobile Spec              |  Desktop Spec
+:----------------------------:|:-------------------------:
+![fanbase_mobile_gif](https://)|![fanbase_desktop_gif](https://)
+
+
