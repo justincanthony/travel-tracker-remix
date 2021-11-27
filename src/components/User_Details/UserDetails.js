@@ -43,7 +43,7 @@ export const UserDetails = ({ traveler }) => {
         <section className="userDetails">
           <h3 className="userName">Welcome {name}</h3>
           <h4>Your Next Trip</h4>
-          {tripPending.place !== undefined ? (
+          {tripPending !== undefined ? (
             <div className="upcomingTripWrapper">
               <div className="upcomingTripImageWrapper">
                 <img
