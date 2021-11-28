@@ -20,7 +20,15 @@ const NewTripForm = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (travelers !== '' && duration !== '' && date !== '') {
+    if (
+      travelers !== '' &&
+      duration !== '' &&
+      date !== '' &&
+      0 < travelers &&
+      travelers <= 20 &&
+      duration > 0 &&
+      duration <= 90
+    ) {
       const newTrip = {
         id: Date.now(),
         userID,
@@ -36,7 +44,7 @@ const NewTripForm = ({
       setTravelers('');
       setDate('');
     } else {
-      setError('Please fill out all fields');
+      setError('Invalid Input');
     }
   };
 
@@ -69,10 +77,15 @@ const NewTripForm = ({
             id="travelers"
             className="travelers"
             type="number"
-            placeholder="Number of Travelers"
+            placeholder="20 people max)"
             value={travelers}
             min={1}
             required
+            onKeyPress={(event) => {
+              if (!/[0-9]/.test(event.key)) {
+                event.preventDefault();
+              }
+            }}
             onChange={(e) => setTravelers(e.target.value)}
           />
           <label for="duration" name="duration">
@@ -82,10 +95,15 @@ const NewTripForm = ({
             id="duration"
             className="duration"
             type="number"
-            placeholder="Number of Days"
+            placeholder="90 days max"
             min={1}
             value={duration}
             required
+            onKeyPress={(event) => {
+              if (!/[0-9]/.test(event.key)) {
+                event.preventDefault();
+              }
+            }}
             onChange={(e) => setDuration(e.target.value)}
           />
           <p>
@@ -98,7 +116,15 @@ const NewTripForm = ({
             type="submit"
             onClick={(e) => {
               handleSubmit(e);
-              if (travelers !== '' && duration !== '' && date !== '') {
+              if (
+                travelers !== '' &&
+                duration !== '' &&
+                date !== '' &&
+                0 < travelers &&
+                travelers <= 20 &&
+                duration > 0 &&
+                duration <= 90
+              ) {
                 close();
               }
             }}
