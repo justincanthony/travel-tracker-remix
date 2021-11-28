@@ -1,6 +1,5 @@
 import React from 'react';
 import './Navbar.css';
-import { Link } from 'react-router-dom';
 import ExploreIcon from '@mui/icons-material/Explore';
 
 const Navbar = () => {

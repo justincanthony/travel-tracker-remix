@@ -7,7 +7,6 @@ import './PastTrips.css';
 
 export const PastTrips = ({ userID }) => {
   const [tripsPast, setTripsPast] = useState([]);
-  const [notification, setNotification] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(true);
 
