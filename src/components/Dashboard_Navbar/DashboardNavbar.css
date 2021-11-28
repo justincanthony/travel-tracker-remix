@@ -1,5 +1,5 @@
 .dashboardNavbar {
-	background-color: rgb(102, 186, 239);
+	background-color: #90C3F2;
 }
 
 .userName {
@@ -16,9 +16,23 @@
 	margin-block: 0;
 	margin-inline-start: 10px;
 	margin-inline-end: 10px;
-	padding: 0;
+	padding: 5px;
 }
 
-.links {
+a.links {
 	text-decoration: none;
+}
+
+@media screen and (max-width: 690px) {
+	.linksList {
+		flex-direction: column;
+	}
+
+	.linksList > li:hover {
+		background-color: #adceec;
+		background-size: 100%;
+		width: 100%;
+		text-align: center;
+	}
+
 }
