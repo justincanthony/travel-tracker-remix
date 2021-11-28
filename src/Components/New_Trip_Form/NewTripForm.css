@@ -1,0 +1,25 @@
+.newTripForm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.date,
+.travelers,
+.duration {
+	height: 30px;
+	border-color: rgb(103, 185, 239);
+	border-radius: 8px;
+	margin-bottom: 10px;
+}
+
+.submit {
+	margin-bottom: 10px;
+	width: 200px;
+	height: 30px;
+}
+
+.submit:hover {
+	background-color: rgb(103, 185, 239);
+}

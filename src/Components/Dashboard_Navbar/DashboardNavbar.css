@@ -1,0 +1,38 @@
+.dashboardNavbar {
+	background-color: #90C3F2;
+}
+
+.userName {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.linksList {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	list-style: none;
+	margin-block: 0;
+	margin-inline-start: 10px;
+	margin-inline-end: 10px;
+	padding: 5px;
+}
+
+a.links {
+	text-decoration: none;
+}
+
+@media screen and (max-width: 690px) {
+	.linksList {
+		flex-direction: column;
+	}
+
+	.linksList > li:hover {
+		background-color: #adceec;
+		background-size: 100%;
+		width: 100%;
+		text-align: center;
+	}
+
+}

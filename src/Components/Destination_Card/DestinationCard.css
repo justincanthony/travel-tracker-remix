@@ -1,0 +1,67 @@
+.destinationCard {
+	height: 300px;
+	width: 250px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 15px;
+	border-radius: 10px;
+	background: #fefcfc;
+	box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+	opacity: 0.75;
+}
+
+.destinationTitle {
+	height: 30px;
+	margin-bottom: 10px;
+}
+
+.destinationDetails {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
+
+.destinationImageWrapper {
+	width: 250px;
+	height: 110px;
+	padding: 5px;
+}
+
+.destinationImage {
+	width: 250px;
+	height: 100%;
+	object-fit: cover;
+}
+
+.destinationDetails p {
+	margin: 5px;
+}
+
+.bookMeButton {
+	height: 25px;
+}
+
+/* Modal Formatting & Style */
+
+.modalContainer {
+	color: grey;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.modalBackButton {
+	/* border-radius: 8px;
+	border: none; */
+	width: 200px;
+	margin-bottom: 10px;
+	height: 30px;
+}
+
+.modalBackButton:hover {
+	background-color: rgb(103, 185, 239);
+}

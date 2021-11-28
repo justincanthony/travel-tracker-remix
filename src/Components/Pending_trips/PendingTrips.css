@@ -1,0 +1,21 @@
+h2 {
+	text-align: center;
+}
+
+.pendingTripsWrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	text-align: center;
+
+}
+
+
+.pendingTripsContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-wrap: wrap;
+	text-align: center;
+}
