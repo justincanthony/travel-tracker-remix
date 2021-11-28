@@ -52,7 +52,7 @@ export const UserDetails = ({ traveler }) => {
                   <p>Travelers: {tripPending.travelers}</p>
                 </article>
               </div>
-              <h4 className="preparations">Prepare For Your Upcomming Trip</h4>
+              <h4 className="preparations">Prepare For Your Upcoming Trip</h4>
               <ul>
                 <li>
                   <a
@@ -79,7 +79,7 @@ export const UserDetails = ({ traveler }) => {
                   <a
                     href={`https://www.google.com/search?q=suggested+activities+for+${travelerType}+in+moscow&sxsrf=AOaemvLBnUQgEgqaayu1iRqapFkOSQRVOg%3A1638044260473&ei=ZJKiYdiRHMy7qtsPxNKY2AI&ved=0ahUKEwjY05Wyrrn0AhXMnWoFHUQpBisQ4dUDCA4&uact=5&oq=best+restaurants+in+${tripPending.destination}&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOgcIABBHELADOgcIABCwAxBDOhAILhDHARCjAhDIAxCwAxBDOgsIABCABBCxAxDJAzoFCAAQkgM6CAgAEIAEELEDSgUIPBIBMkoECEEYAEoECEYYAFDHCVjuOmCVP2gCcAJ4AIAB1QSIAfAOkgEJNi4zLjQtMS4xmAEAoAEByAEOwAEB&sclient=gws-wiz`}
                   >
-                    Suggested Activites for {travelerType}
+                    Suggested Activities for {travelerType}
                   </a>
                 </li>
               </ul>
