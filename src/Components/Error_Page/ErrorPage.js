@@ -4,9 +4,11 @@ import { NavLink } from 'react-router-dom';
 
 export const ErrorPage = () => {
   return (
-    <React.Fragment>
-      <p>Whoops! The page you are looking for does not exist.</p>
+    <section className="errorPage">
+      <h4 className="errorMessage">
+        Whoops! The page you are looking for does not exist.
+      </h4>
       <NavLink to="/">Return to Login</NavLink>
-    </React.Fragment>
+    </section>
   );
 };
