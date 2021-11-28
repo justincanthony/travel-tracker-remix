@@ -1,6 +1,7 @@
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from '../Navbar/Navbar';
+import { ErrorPage } from '../Error_Page/ErrorPage';
 import { Login } from '../Login/Login';
 import { PendingTrips } from '../Pending_trips/PendingTrips';
 import { ToastContainer } from 'react-toastify';
@@ -50,7 +51,7 @@ const App = () => {
             return <PastTrips userID={params.userID} />;
           }}
         />
-        {/* <Route render={() => <ErrorPage/>}/> */}
+        <Route render={() => <ErrorPage />} />
       </Switch>
     </div>
   );
