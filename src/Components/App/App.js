@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from '../Navbar/Navbar';
 import { ErrorPage } from '../Error_Page/ErrorPage';
 import { Login } from '../Login/Login';
+import { LoginInstructions } from '../Login_Instructions/LoginInstructions';
 import { PendingTrips } from '../Pending_trips/PendingTrips';
 import { ToastContainer } from 'react-toastify';
 import { UserDashboard } from '../UserDashboard/UserDashboard';
@@ -50,6 +51,11 @@ const App = () => {
             const { params } = match;
             return <PastTrips userID={params.userID} />;
           }}
+        />
+        <Route
+          exact
+          path="/login_instructions"
+          render={() => <LoginInstructions />}
         />
         <Route render={() => <ErrorPage />} />
       </Switch>
