@@ -17,13 +17,14 @@
 
 .upcomingTripWrapper {
 	display: flex;
-	/* flex-direction: column; */
-
 }
 
 .preparations {
 	margin-bottom: 0px;
 }
-.upcomingTripImageWrapper {
-	
+
+@media screen and (max-width: 690px) {
+	.upcomingTripWrapper {
+		flex-direction: column;
+	}
 }
