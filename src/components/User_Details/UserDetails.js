@@ -32,24 +32,27 @@ export const UserDetails = ({ traveler }) => {
       {!isLoading && !error && (
         <section className="userDetails">
           <h3 className="userName">Welcome {name}</h3>
-          <h4>Traveler Type: {travelerType}</h4>
+          <h4 className="travelerType">Traveler Type: {travelerType}</h4>
           <h4>Your Next Trip</h4>
           {tripPending !== undefined ? (
-            <div className="upcomingTripWrapper">
-              <div className="upcomingTripImageWrapper">
-                <img
-                  className="destinationImage"
-                  src={tripPending.place.image}
-                  alt={tripPending.place.alt}
-                />
-              </div>
-              <article className="tripDetails">
-                <p>{tripPending.place.destination}</p>
-                <p>Departing: {dayjs(tripPending.date).format('M/D/YYYY')}</p>
+            <React.Fragment>
+              <div className="upcomingTripWrapper">
+                <div className="upcomingTripImageWrapper">
+                  <img
+                    className="destinationImage"
+                    src={tripPending.place.image}
+                    alt={tripPending.place.alt}
+                  />
+                </div>
+                <article className="tripDetails">
+                  <p>{tripPending.place.destination}</p>
+                  <p>Departing: {dayjs(tripPending.date).format('M/D/YYYY')}</p>
 
-                <p>Trip Duration: {tripPending.duration} Days</p>
-                <p>Travelers: {tripPending.travelers}</p>
-              </article>
+                  <p>Trip Duration: {tripPending.duration} Days</p>
+                  <p>Travelers: {tripPending.travelers}</p>
+                </article>
+              </div>
+              <h4 className="preparations">Prepare For Your Upcomming Trip</h4>
               <ul>
                 <li>
                   <a
@@ -76,11 +79,11 @@ export const UserDetails = ({ traveler }) => {
                   <a
                     href={`https://www.google.com/search?q=suggested+activities+for+${travelerType}+in+moscow&sxsrf=AOaemvLBnUQgEgqaayu1iRqapFkOSQRVOg%3A1638044260473&ei=ZJKiYdiRHMy7qtsPxNKY2AI&ved=0ahUKEwjY05Wyrrn0AhXMnWoFHUQpBisQ4dUDCA4&uact=5&oq=best+restaurants+in+${tripPending.destination}&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOgcIABBHELADOgcIABCwAxBDOhAILhDHARCjAhDIAxCwAxBDOgsIABCABBCxAxDJAzoFCAAQkgM6CAgAEIAEELEDSgUIPBIBMkoECEEYAEoECEYYAFDHCVjuOmCVP2gCcAJ4AIAB1QSIAfAOkgEJNi4zLjQtMS4xmAEAoAEByAEOwAEB&sclient=gws-wiz`}
                   >
-                    Suggested Activiites for {travelerType}
+                    Suggested Activites for {travelerType}
                   </a>
                 </li>
               </ul>
-            </div>
+            </React.Fragment>
           ) : (
             <p>You do not have any approved upcoming trips.</p>
           )}
