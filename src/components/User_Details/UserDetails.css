@@ -6,12 +6,24 @@
 	flex-wrap: wrap;
 }
 
+.userName {
+	margin-bottom: 0;
+}
+
+.travelerType {
+	margin-top: 5px;
+	margin-bottom: 0px;
+}
+
 .upcomingTripWrapper {
 	display: flex;
 	/* flex-direction: column; */
 
 }
 
+.preparations {
+	margin-bottom: 0px;
+}
 .upcomingTripImageWrapper {
 	
 }
