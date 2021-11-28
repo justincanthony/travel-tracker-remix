@@ -36,7 +36,7 @@ https://github.com/justincanthony/travel-tracker-remix-api -->
     <a href=https://github.com/justincanthony/travel-tracker-remix><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://www.example.com">Deploy Link</a>
+    <a href="https://travel-tracker-remix.herokuapp.com">Deploy Link</a>
     ·
     <a href="https://github.com/justincanthony/travel-tracker-remix/issues">Report Bug</a>
     ·
