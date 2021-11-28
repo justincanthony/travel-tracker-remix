@@ -2,7 +2,7 @@ import { toast } from 'react-toastify';
 
 export const fetchData = async () => {
   const response = await fetch(
-    'http://travel-tracker-remix-api.herokuapp.com/api/v1/destinations'
+    'https://travel-tracker-remix-api.herokuapp.com/api/v1/destinations'
   );
   if (response.status >= 400) {
     return response.json().then((res) => {
@@ -15,7 +15,7 @@ export const fetchData = async () => {
 
 export const fetchTripsByID = async (id) => {
   const response = await fetch(
-    `http://travel-tracker-remix-api.herokuapp.com/api/v1/trips/${id}`
+    `https://travel-tracker-remix-api.herokuapp.com/api/v1/trips/${id}`
   );
   if (response.status >= 400) {
     return response.json().then((res) => {
@@ -28,7 +28,7 @@ export const fetchTripsByID = async (id) => {
 
 export const fetchTraveler = async (username, password) => {
   const response = await fetch(
-    `http://travel-tracker-remix-api.herokuapp.com/api/v1/travelers/${username}/${password}`
+    `https://travel-tracker-remix-api.herokuapp.com/api/v1/travelers/${username}/${password}`
   );
   if (response.status >= 400) {
     return response.json().then((res) => {
@@ -41,7 +41,7 @@ export const fetchTraveler = async (username, password) => {
 
 export const fetchTravelerByID = async (userID) => {
   const response = await fetch(
-    `http://travel-tracker-remix-api.herokuapp.com/api/v1/travelers/${userID}`
+    `https://travel-tracker-remix-api.herokuapp.com/api/v1/travelers/${userID}`
   );
   if (response.status >= 400) {
     return response.json().then((res) => {
@@ -60,7 +60,7 @@ export const bookTrip = async (newTrip) => {
   };
 
   const response = await fetch(
-    'http://travel-tracker-remix-api.herokuapp.com/api/v1/trips',
+    'https://travel-tracker-remix-api.herokuapp.com/api/v1/trips',
     requestOptions
   );
   if (response.status >= 400) {
@@ -74,7 +74,7 @@ export const bookTrip = async (newTrip) => {
 
 export const deleteTrip = async (id, destination) => {
   const response = await toast.promise(
-    fetch(`http://travel-tracker-remix-api.herokuapp.com/api/v1/trips/${id}`, {
+    fetch(`https://travel-tracker-remix-api.herokuapp.com/api/v1/trips/${id}`, {
       method: 'DELETE',
     }),
     {
