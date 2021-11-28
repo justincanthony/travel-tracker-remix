@@ -1,0 +1,9 @@
+.errorPage{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  height: 100vh;
+  background-image:url("https://forever.travel-assets.com/flex/flexmanager/images/2021/11/04/TVLY_CyberWeek_imgB_1400x600_20211029.jpg?impolicy=fcrop&w=1680&h=485&q=medium");
+  background-repeat: no-repeat;
+}
