@@ -116,6 +116,6 @@ Screen Size EXAMPLES
 
 Mobile Spec              |  Desktop Spec
 :----------------------------:|:-------------------------:
-![fanbase_mobile_gif](https://)|![fanbase_desktop_gif](https://)
+![mobile_gif](https://)|![desktop_gif](https://)
 
 
