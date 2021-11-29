@@ -119,7 +119,30 @@ Mobile Spec              |  Desktop Spec
 ![mobile_gif](https://)|![desktop_gif](https://)
 
 
+<!-- ROAD MAP -->
+## Road Map
 
+See the [open issues](https://github.com/justincanthony/travel-tracker-remix/issues) for a list of proposed features (and known issues).
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+## Contact
+<p>Justin Anthony</p>
+<a href="https://github.com/justincanthony">GitHub</a>
+<br/>
+<a class="u-email Link--primary " href="mailto:justincanthony@gmail.com">justincanthony@gmail.com</a>
+<a class="Link--primary" href="https://www.linkedin.com/in/justincanthony/">LinkedIn</a>
 
 [project-spec-url]: https://https://frontend.turing.edu/projects/travel-tracker.html
 [turing-shield]: https://img.shields.io/badge/Project%20-Spec-blue
