@@ -97,7 +97,7 @@ Particular challenges included making different network requests containing data
 * [React Micro-Modal](https://www.npmjs.com/package/react-micro-modal)
 * [Dayjs](https://day.js.org/)
 * [React Toastify](https://www.npmjs.com/package/react-toastify) 
-* 
+
 <!-- GETTING STARTED -->
 ## Getting Started
 
@@ -124,6 +124,12 @@ To get a local copy up and running follow these simple steps.
 
 ## USAGE                       
 <!--DESCRIBE WHAT THE USAGE EXPERIENCE IS LIKE/BUILT ON -->
+
+When visiting the application's home page, the user is presented with a login. Should the user forget thier password, they can click the `forgot password` link where there are simple instructions for logging in. Once the user has been granted access, the will be directed to thier dashboard wich displays the upcoming "approved" trip and links to help the traveler to further enhance thier adventure by checking dining, weather, events, and a special dynamic link that refelcts the user's `traveler type` property.
+
+From the dashboard view, their are several other nav links that can direct the user to their desrired action. The `Destinations` link directs a user to a page view of all of the available destinations. While on this page, the user can book a trip by clicking on a `Destination Card`. Upon clicking the `Book Me` button, a modal form will pop up asking the user to input a date, duration, and number of travelers. The cost of the trip will dynamically display as the user enters information. Once their trip has been submitted, a `toast notification` will display the status of the request and details of the trip requested. The user can switch page views to `Pending Trips` where they can preview their requested trip and cancel it should they choose to do so. A final page view displays all of the user's past trips. 
+
+When the user has concluded their session, they can log out of their account by accessing the dropdown menu found in the navbar, and selecting `Logout`.
 
 
 Screen Size EXAMPLES 
