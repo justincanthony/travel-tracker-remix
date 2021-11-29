@@ -71,9 +71,16 @@ https://github.com/justincanthony/travel-tracker-remix-api -->
 <!-- ABOUT THE PROJECT -->
 
 ### About the Project
-<!-- Describe what the over all scope and learninging goal of the project is, and what set-up the challenge was framed in-->
-This was a personal project that challenged me to refactor a previous project written in `vanilla` JS to `React` and to get more experience with `Express js` by ading new endpoints to the api found <a href="https://github.com/justincanthony/travel-tracker-remix-api">here</a>.
-.
+<!-- Describe what the over all scope and learning goal of the project is, and what set-up the challenge was framed in-->
+This was a personal project that challenged me to refactor a <a href="https://github.com/justincanthony/travel-tracker">previous project</a>  written in `vanilla JS` to `React`. The previous version of "Travel Tracker" was a representation of my first 2 months of coding. This "remix" version reflects my progress as a frontend developer 8 weeks later. Learning goals were extended to include working with `Express js` by adding new endpoints to the api found <a href="https://github.com/justincanthony/travel-tracker-remix-api">here</a>. 
+
+The original project spec can be found <a href="https://frontend.turing.edu/projects/travel-tracker.html">here</a>. 
+
+This project challenged the developer to create an application that managed a single user's travels. Fetch calls were originally made to locally hosted server (now refactored and deplyed on Heroku) that contained three different data sets `travelers`, `destinations`, and `trips`. With this information, students were given creative control of how to display all relevant information to the user. 
+
+Key features of the application include making `POST` requests to book a new trip,  `GET` requests to view previous trips, pending trips, and upcomming approved trips. Additional application features included displaying the cost of logding and cost flights while booking, displaying a total trip cost prior to confirming the trip, and user ability to make a `DELETE` request to cancel the trip .  Users also have the ability to log in and out through a "mock" login page. 
+
+Particular challenges included making different network requests containing data sets that required filtering and matching `userID's` in order to display accurate trip information. This challenge was simplified by refactoring the original API mentioned above to handle new network requests and give desired specific user inforamtion removing the frontend logic and uneeded extra data from the original endpoints. More details about the api refactor can be found <a href="https://github.com/justincanthony/travel-tracker-remix-api/blob/main/README.md">here</a>.
 
 ### Built With
 
