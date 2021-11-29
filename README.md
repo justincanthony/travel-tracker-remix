@@ -72,7 +72,8 @@ https://github.com/justincanthony/travel-tracker-remix-api -->
 
 ### About the Project
 <!-- Describe what the over all scope and learninging goal of the project is, and what set-up the challenge was framed in-->
-
+This was a personal project that challenged me to refactor a previous project written in `vanilla` JS to `React` and to get more experience with `Express js` by ading new endpoints to the api found <a href="https://github.com/justincanthony/travel-tracker-remix-api">here</a>.
+.
 
 ### Built With
 
