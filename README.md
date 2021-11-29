@@ -82,6 +82,8 @@ Key features of the application include making `POST` requests to book a new tri
 
 Particular challenges included making different network requests containing data sets that required filtering and matching `userID's` in order to display accurate trip information. This challenge was simplified by refactoring the original API mentioned above to handle new network requests and give desired specific user information removing the frontend logic and uneeded extra data from the original endpoints. More details about the api refactor can be found <a href="https://github.com/justincanthony/travel-tracker-remix-api/blob/main/README.md">here</a>.
 
+Responisve design was implemented to enhance the UX/UI for different devices. 
+
 ### Built With
 
 [![React Hooks][react-hooks-shield]][react-hooks-url]
@@ -140,10 +142,9 @@ Mobile Spec              |  Desktop Spec
 
 
 <!-- ROAD MAP -->
-## Road Map
+## Road Map - Issues & Future Features
 
 See the [open issues](https://github.com/justincanthony/travel-tracker-remix/issues) for a list of proposed features (and known issues).
-
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -155,7 +156,6 @@ Contributions are what make the open source community such an amazing place to b
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
 
 ## Contact
 <p>Justin Anthony</p>
