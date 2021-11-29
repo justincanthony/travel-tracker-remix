@@ -122,7 +122,8 @@ Screen Size EXAMPLES
 
 Mobile Spec              |  Desktop Spec
 :----------------------------:|:-------------------------:
-![mobile_gif](https://)|![desktop_gif](https://)
+![mobile_gif](https://user-images.githubusercontent.com/82064981/143930858-b9ad418e-9c24-463e-8afb-76f7aae53311.gif)|![desktop_gif](https://)
+
 
 
 <!-- ROAD MAP -->
