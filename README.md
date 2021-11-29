@@ -40,7 +40,7 @@ https://github.com/justincanthony/travel-tracker-remix-api -->
     ·
     <a href="https://github.com/justincanthony/travel-tracker-remix/issues">Report Bug</a>
     ·
-    <a href="https://github.com/justincanthony/travel-tracker-remix/issues/issues">Request Feature</a>
+    <a href="https://github.com/justincanthony/travel-tracker-remix/issues">Request Feature</a>
 
 </p>
 
@@ -76,14 +76,20 @@ https://github.com/justincanthony/travel-tracker-remix-api -->
 
 ### Built With
 
-
 [![React Hooks][react-hooks-shield]][react-hooks-url]
+<br>
 [![React Router][react-router-shield]][react-router-url]
-[![NPM][npm-sheild]][npm-url]
-<!-- [![Cypress Sheild][cypress-sheild]][cypress-url] -->
-[![Visual Studio Code][visual-studio-code-sheild]][visual-studio-code-url]
-
-
+<br>
+[![NPM][npm-shield]][npm-url]
+<br>
+[![Visual Studio Code][visual-studio-code-shield]][visual-studio-code-url]
+<br>
+[![MUI][material-components-shield]][material-components-url]
+<br/>
+* [React Micro-Modal](https://www.npmjs.com/package/react-micro-modal)
+* [Dayjs](https://day.js.org/)
+* [React Toastify](https://www.npmjs.com/package/react-toastify) 
+* 
 <!-- GETTING STARTED -->
 ## Getting Started
 
@@ -116,6 +122,57 @@ Screen Size EXAMPLES
 
 Mobile Spec              |  Desktop Spec
 :----------------------------:|:-------------------------:
-![mobile_gif](https://)|![desktop_gif](https://)
+![mobile_gif](https://user-images.githubusercontent.com/82064981/143930858-b9ad418e-9c24-463e-8afb-76f7aae53311.gif)|![desktop_gif](https://user-images.githubusercontent.com/82064981/143931462-86de7ec3-3069-4ff2-a2d3-53ca4a98d25a.gif)
 
+
+<!-- ROAD MAP -->
+## Road Map
+
+See the [open issues](https://github.com/justincanthony/travel-tracker-remix/issues) for a list of proposed features (and known issues).
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+## Contact
+<p>Justin Anthony</p>
+<a href="https://github.com/justincanthony">GitHub</a>
+<br/>
+<a class="u-email Link--primary " href="mailto:justincanthony@gmail.com">justincanthony@gmail.com</a>
+<br/>
+<a class="Link--primary" href="https://www.linkedin.com/in/justincanthony/">LinkedIn</a>
+
+[project-spec-url]: https://https://frontend.turing.edu/projects/travel-tracker.html
+[turing-shield]: https://img.shields.io/badge/Project%20-Spec-blue
+[contributors-shield]: https://img.shields.io/badge/Contributors-1-blue
+[contributors-url]: https://github.com/orgs/travel-tracker-remix/people
+[issues-shield]: https://img.shields.io/badge/Issues-6-blue
+[issues-url]: https://github.com/justincanthony/travel-tracker-remix/issues
+[react-hooks-shield]: https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB
+[react-hooks-url]: https://reactjs.org/docs/hooks-intro.html
+[react-router-shield]: https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white
+[react-router-url]: https://reactrouter.com/
+[npm-shield]: https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white
+[npm-url]: https://www.npmjs.com/
+[cypress-shield]: https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e
+[cypress-url]: https://docs.cypress.io/guides/overview/why-cypress
+[visual-studio-code-shield]: https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white
+[visual-studio-code-url]: https://code.visualstudio.com/
+[circle-ci-shield]: https://img.shields.io/badge/CIRCLECI-%23161616.svg?style=for-the-badge&logo=circleci&logoColor=white
+[circle-ci-url]: https://circleci.com/
+[material-components-shield]: https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=material-ui&logoColor=white
+[material-components-url]: https://mui.com/
+[heroku-url]: https://id.heroku.com/login
+[heroku-shield]: https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white
+[github-url]: https://github.com/
+[github-shield]: https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white
 
