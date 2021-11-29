@@ -80,8 +80,6 @@ https://github.com/justincanthony/travel-tracker-remix-api -->
 <br>
 [![React Router][react-router-shield]][react-router-url]
 <br>
-[![express js][express-shield]][express-url]
-<br/>
 [![NPM][npm-shield]][npm-url]
 <br>
 [![Visual Studio Code][visual-studio-code-shield]][visual-studio-code-url]
