@@ -41,8 +41,23 @@ https://github.com/justincanthony/travel-tracker-remix-api -->
     <a href="https://github.com/justincanthony/travel-tracker-remix/issues">Report Bug</a>
     ·
     <a href="https://github.com/justincanthony/travel-tracker-remix/issues">Request Feature</a>
-
+    <br />
+    <br />
+  
+ 
 </p>
+
+### Important
+This application and its accompanying api are deployed with Heroku. Chances are it will take a few minutes for the server and application "wake" from Heroku's sleep state. Please attempt to refresh the page after 30 seconds in order to use the application.
+
+#### Login Credentials
+
+username: `traveler50`
+password: `traveler`
+
+Alternate usernames can be used by using `traveler` as the first part, and any number 1-50. Each user has their own unique set of data. 
+
+
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -126,6 +141,14 @@ To get a local copy up and running follow these simple steps.
 
 ## USAGE                       
 <!--DESCRIBE WHAT THE USAGE EXPERIENCE IS LIKE/BUILT ON -->
+
+### Login Credentials
+
+username: `traveler50`
+password: `traveler`
+
+Alternate usernames can be used by using `traveler` as the first part, and any number 1-50. Each user has their own unique set of data. 
+
 
 When visiting the application's home page, the user is presented with a login. Should the user forget thier password, they can click the `forgot password` link where there are simple instructions for logging in. Once the user has been granted access, the will be directed to thier dashboard wich displays the upcoming "approved" trip and links to help the traveler to further enhance thier adventure by checking dining, weather, events, and a special dynamic link that refelcts the user's `traveler type` property.
 
