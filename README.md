@@ -142,6 +142,7 @@ Contributions are what make the open source community such an amazing place to b
 <a href="https://github.com/justincanthony">GitHub</a>
 <br/>
 <a class="u-email Link--primary " href="mailto:justincanthony@gmail.com">justincanthony@gmail.com</a>
+<br/>
 <a class="Link--primary" href="https://www.linkedin.com/in/justincanthony/">LinkedIn</a>
 
 [project-spec-url]: https://https://frontend.turing.edu/projects/travel-tracker.html
