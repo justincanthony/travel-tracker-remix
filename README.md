@@ -122,8 +122,7 @@ Screen Size EXAMPLES
 
 Mobile Spec              |  Desktop Spec
 :----------------------------:|:-------------------------:
-![mobile_gif](https://user-images.githubusercontent.com/82064981/143930858-b9ad418e-9c24-463e-8afb-76f7aae53311.gif)|![desktop_gif](https://)
-
+![mobile_gif](https://user-images.githubusercontent.com/82064981/143930858-b9ad418e-9c24-463e-8afb-76f7aae53311.gif)|![desktop_gif](https://user-images.githubusercontent.com/82064981/143931462-86de7ec3-3069-4ff2-a2d3-53ca4a98d25a.gif)
 
 
 <!-- ROAD MAP -->
@@ -176,3 +175,4 @@ Contributions are what make the open source community such an amazing place to b
 [heroku-shield]: https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white
 [github-url]: https://github.com/
 [github-shield]: https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white
+
