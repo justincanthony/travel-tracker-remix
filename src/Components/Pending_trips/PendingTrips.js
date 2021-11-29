@@ -13,7 +13,6 @@ export const PendingTrips = ({ userID }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   const cancelTrip = (id, destination) => {
-    console.log(destination);
     const getTrips = () => {
       fetchTripsByID(userID)
         .then((data) => {
