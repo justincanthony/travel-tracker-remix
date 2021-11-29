@@ -76,12 +76,14 @@ https://github.com/justincanthony/travel-tracker-remix-api -->
 
 ### Built With
 
-
 [![React Hooks][react-hooks-shield]][react-hooks-url]
+<br>
 [![React Router][react-router-shield]][react-router-url]
+<br>
 [![NPM][npm-shield]][npm-url]
-<!-- [![Cypress Sheild][cypress-sheild]][cypress-url] -->
+<br>
 [![Visual Studio Code][visual-studio-code-shield]][visual-studio-code-url]
+<br>
 [![MUI][material-components-shield]][material-components-url]
 
 <!-- GETTING STARTED -->
