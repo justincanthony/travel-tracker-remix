@@ -80,6 +80,8 @@ https://github.com/justincanthony/travel-tracker-remix-api -->
 <br>
 [![React Router][react-router-shield]][react-router-url]
 <br>
+[![express js][express-shield]][express-url]
+<br/>
 [![NPM][npm-shield]][npm-url]
 <br>
 [![Visual Studio Code][visual-studio-code-shield]][visual-studio-code-url]
@@ -171,3 +173,5 @@ Contributions are what make the open source community such an amazing place to b
 [heroku-shield]: https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white
 [github-url]: https://github.com/
 [github-shield]: https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white
+[express-shield]: https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB
+[express-url]: https://expressjs.com/
