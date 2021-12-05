@@ -48,7 +48,7 @@ https://github.com/justincanthony/travel-tracker-remix-api -->
 </p>
 
 ### Important
-This application and its accompanying api are deployed with Heroku. Chances are it will take a few minutes for the server and application to "wake" from Heroku's sleep state. Please attempt to refresh the page after 30 seconds in order to use the application.
+This application and its accompanying api are deployed with Heroku. It may take a moment for the server and application to "wake" from Heroku's sleep state.
 
 #### Login Credentials
 
